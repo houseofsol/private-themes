@@ -676,7 +676,8 @@ div.hr2 hr {
 	padding:2px;
 	margin-left:108px;
 	margin-top:153px;
-	
+	overflow-y:auto;
+	overflow-x:hidden;
 }
 
 
@@ -694,15 +695,6 @@ div.hr2 hr {
    padding-bottom:0px;
 }
 
-#sidewrap {
-	position:fixed;
-	width:300px;
-	height:500px;
-	overflow:scroll;
-	overflow-x:hidden;
-	margin-left:1px;
-	margin-top:5px;
-}
 
 /* sidebar ends here */	
 
@@ -1667,8 +1659,6 @@ pre {
 <!-- this is the meat of the theme and makes it what it is -->
 <div id="sidebar">
 
-<div id="sidewrap">
-
 <!-- box one -->
 <div id="one">
 
@@ -1728,7 +1718,6 @@ pre {
 
 </div>
 <br /> <br />
-</div>
 <!-- box four -->
 
 </div>
