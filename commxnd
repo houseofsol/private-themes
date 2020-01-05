@@ -1,0 +1,3333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+<!--
+ 
+theme #2 by depthsofmysol with a base code by neonbike themes. 
+this theme was created specifically for commxnd and is not available to the public
+please do not remove this credit. 
+thank you.
+ 
+-->
+
+<!-- dropdown verse scripts -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+        $('.toggle').each(function(){
+                $(this).find('.toggle-content').hide();
+        });
+        $('.toggle a.toggle-trigger').click(function(){
+                var el = $(this), parent = el.closest('.toggle');
+ 
+                if( el.hasClass('active') )
+                {
+                        parent.find('.toggle-content').slideToggle();
+                        el.removeClass('active');
+                }
+                else
+                {
+                        parent.find('.toggle-content').slideToggle();
+                        el.addClass('active');
+                }
+                return false;
+        });
+ 
+});  
+</script>
+
+<!-- popup script -->
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<!-- end script -->
+
+
+<!-- important scripts -->
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+
+
+<!-- end other script -->
+
+
+<!-- tabbed script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tab li.active").removeClass("active");
+            $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+<!-- tabbed popup script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#poptabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#poptabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#poptab li.active").removeClass("active");
+            $("ul#poptab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+
+<!-- mytooltips script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+
+<script>
+
+(function($){
+
+$(document).ready(function(){
+
+$("a[title]").style_my_tooltips({
+
+tip_follows_cursor:true,
+
+tip_delay_time:0,
+
+tip_fade_speed:0,
+
+attribute:"title"
+
+});
+
+});
+
+})(jQuery);
+
+</script>
+
+<!-- end mytooltips script -->
+
+ 
+<!-- colour variables (this is where you change the colours) -->
+ 
+   <meta name="color:Background" content="#ffffff"/>
+	<meta name="color:Text" content="#323232"/>
+	<meta name="color:asktext" content="#323232"/>
+	<meta name="color:Link" content="#710002"/>
+	<meta name="color:infolink" content="#66635b"/>
+	<meta name="color:infolink hover" content="#710002"/>
+	<meta name="color:Link Hover" content="#66635b"/>
+	<meta name="color:Bold" content="#dc0304"/>
+	<meta name="color:Italics" content="#e78338"/>
+	<meta name="color:blockquote" content="#9d1e23"/>
+  
+
+<!-- image variables (this is for the image uploads) -->  
+
+	<meta name="image:base" content=""/>
+	<meta name="image:background" content=""/>
+	<meta name="image:info" content=""/>
+	<meta name="image:header" content=""/> 
+	<meta name="image:active" content=""/>
+	<meta name="image:inactive" content=""/>
+	<meta name="image:plotting" content=""/> 
+	<meta name="image:ship" content=""/>   
+    
+	
+	<meta name="if:show grayscale" content="0"/> <!-- this is where you'll have the option of turning the colour on hover on or off -->
+	<meta name="if:Cursor" content="1"> <!-- this is where you'll have the option of turning the small cursor on or off -->
+	
+
+
+
+<!-- this is where you can choose what google fonts you want to use -->
+<link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" type='text/css'>  
+<link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet" type='text/css'> 
+
+
+<style type="text/css"> /* this gives the theme its look */
+
+@font-face {font-family:"billybond"; src:url('https://static.tumblr.com/ahsqnir/xm0q3lt6x/billybond.ttf');} 
+@font-face { font-family: "candreva"; src: url('https://static.tumblr.com/ahsqnir/jJeq3lt75/candreva.ttf'); format("truetype");}
+    
+blockquote2 {
+    background-color:transparent;
+    padding-left:12px;
+    padding-right:12px;
+    padding-top:15px;
+    padding-bottom:15px;
+    margin-top:24px;
+    margin-bottom:24px;
+    text-align:justify;
+    margin-left:0px;
+    margin-right:0px;
+    border:1px dashed #000;
+    word-wrap: break-word!important;
+}
+
+/* this is more code for the cursor */
+
+{block:IfCursor}*, body, a, a:hover {
+cursor: url(https://cur.cursors-4u.net/others/oth-6/oth589.cur), auto;
+}
+{block:IfCursor}
+
+/* this is for the tabbed popup box */
+
+ul#poptabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+}
+
+ul#poptabs li {
+   display: inline-block;
+   background-color: transparent;
+   background-image:url('https://static.tumblr.com/ahsqnir/L0Gq3ltki/tabsbg.png');
+   border: dotted 1px #fff;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   color: #323232;
+   cursor: pointer;
+}
+
+ul#poptabs li:hover {
+   background-color: #112200;
+   background-image:url('https://static.tumblr.com/ahsqnir/L0Gq3ltki/tabsbg.png');
+}
+
+ul#poptabs li.active {
+   background-color: #112200;
+   background-image:url('https://static.tumblr.com/ahsqnir/L0Gq3ltki/tabsbg.png');
+}
+
+ul#poptab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul#poptab li {
+   display: none;
+}
+
+ul#poptab li.active {
+   display: block;
+}
+
+/* tabbed popup box coding ends here */
+
+
+/* this is for the quotes box */
+
+#quotes{
+		position:fixed;
+      top:500px;
+      left:180px;
+      width:510px;
+      height:96px;
+      background-color:transparent;
+      font-size:12px;
+		text-transform:lowercase;
+		text-align:left;
+		color: #616161;
+		overflow:auto;
+		padding:0px;
+      overflow-x:hidden;
+
+}
+
+#quotes a{
+	text-decoration:none;
+}
+
+#quotes a:hover {
+    text-decoration:none;
+}
+
+#quotes p{
+		padding-top:3px;
+		padding-bottom:3px;
+		border-width:0px 0px 1px 0px;
+		border-style:solid;
+	}
+	
+
+/* update box coding ends here */
+
+/* this is for the update boxes */
+
+#hoverboxleft {
+   position:fixed;
+   top:45px;
+   margin-left:171px;
+   }
+   
+#hovercontentleft {
+   margin-top:10px;
+   width:250px;
+   height:400px;
+   color:#323232;
+   background:#ccc;
+   border:1px solid #a2a2a2;
+   opacity:0;
+   text-align:center;
+   padding:5px;
+   overflow:scroll;
+   overflow-x:hidden;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;
+     }
+     
+#hoverboxleft:hover #hovercontentleft {
+   opacity:1;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;}
+   
+
+#hoverboxright {
+   position:fixed;
+   top:45px;
+   margin-left:455px;
+   }
+   
+#hovercontentright {
+   margin-top:10px;
+   width:250px;
+   height:400px;
+   color:#323232;
+   background:#ccc;
+   border:1px solid #a2a2a2;
+   opacity:0;
+   text-align:center;
+   padding:5px;
+   overflow:scroll;
+   overflow-x:hidden;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;
+     }
+     
+#hoverboxright:hover #hovercontentright {
+   opacity:1;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;}
+	
+
+/* update box coding ends here */
+
+
+/* this is for the tumblr controls */
+
+iframe#tumblr_controls {
+right:2px !important;
+opacity:0.4;
+position: fixed !important;
+filter:alpha(opacity=30);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+iframe#tumblr_controls:hover{
+opacity:0.9;
+position: fixed !important;
+filter:alpha(opacity=80);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+
+
+/* this is what changes the colour when you highlight */
+
+::selection {
+background: #484848;
+color: #778866;
+}
+
+
+/* this changes the tooltip when you hover over a link */
+
+#s-m-t-tooltip {
+max-width:370px;
+padding:5px;
+margin:10px 0px 0px 10px;
+background-color:#112200; 
+background-image:url('https://static.tumblr.com/ahsqnir/L0Gq3ltki/tabsbg.png');
+background-repeat:no-repeat;
+font-family:trebuchet ms;
+font-size:8px;
+letter-spacing:1px;
+font-style:none;
+text-transform:uppercase;
+padding-bottom:3px;
+color:#323232;
+border: 1px solid #ffffff;
+z-index:999999999999999999999999999999999999;
+}
+
+
+/* this is the scrollbar code */
+ 
+::-webkit-scrollbar-thumb:vertical {background-color:transparent;height:0px;}
+::-webkit-scrollbar-thumb:horizontal {background-color:transparent;height:0px;}
+::-webkit-scrollbar {background-color:{color:transparent};height:0px;width:0px;}
+
+
+/* this is all your heading codes */
+
+h1 {
+font-size:17px;
+line-height:15px;
+font-family:bitter;
+text-transform:uppercase;
+text-align:center;
+font-style:italic;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+}
+ 
+h2 {
+font-size:17px;
+font-family:bitter;
+text-align:center;
+line-height:100%;
+letter-spacing:-0.5px;
+color:{color:text};
+font-weight:bold;
+text-transform:uppercase;
+padding:5px;
+padding-bottom:2px;
+}
+
+h3 {
+font-size:13px;
+font-family:bitter;
+text-align:center;
+line-height:100%;
+letter-spacing:-0.5px;
+color:{color:text};
+font-weight:bold;
+text-transform:uppercase;
+padding:5px;
+padding-bottom:2px;
+background-image: url('{image:header}');
+background-repeat: no-repeat;
+margin-left:7px;
+}
+
+h4 {
+font-size:13px;
+line-height:15px;
+font-family:bitter;
+text-transform:lowercase;
+text-align:center;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+background-color: transparent;
+border: solid 1px #63646a;
+width:175px;
+display: inline-block;
+padding: 5px 15px;
+margin-bottom: 1px;
+margin-left:20px;
+}
+
+h5 {
+font-size:13px;
+line-height:15px;
+font-family:bitter;
+text-transform:lowercase;
+text-align:center;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+background-color: transparent;
+border: solid 1px #63646a;
+width:175px;
+display: inline-block;
+padding: 5px 15px;
+margin-bottom: 1px;
+margin-left:5px;
+}
+
+h6 {
+font-size:13px;
+line-height:15px;
+font-family:bitter;
+text-transform:lowercase;
+text-align:center;
+font-weight:normal;
+letter-spacing:0px;
+color:#fff;
+background-color: transparent;
+border: solid 1px #63646a;
+width:365px;
+display: inline-block;
+padding: 5px 15px;
+margin-bottom:15px;
+margin-left:22px;
+}
+
+h7 {
+font-size:13px;
+line-height:15px;
+font-family:bitter;
+text-transform:lowercase;
+text-align:center;
+font-weight:normal;
+letter-spacing:0px;
+color:#fff;
+background-color: transparent;
+border: solid 1px #63646a;
+width:225px;
+display: inline-block;
+padding: 5px 15px;
+margin-bottom: 1px;
+margin-left:0px;
+}
+
+ul{
+    list-style-type:lower-roman;
+}
+ 
+ol{
+    list-style-type:;
+}
+
+/* heading code ends */
+
+ 
+/* general code for the look of your theme */
+
+body {
+    background-color:{color:background};
+    background-image: url('{image:base}'), url('{image:background}');
+	background-repeat:no-repeat, repeat;
+	background-attachment:fixed;
+	background-position:73px 0px; 
+    margin:0px;
+    color:{color:text};
+    font-family:bitter;
+    font-size:12px;
+    text-transform:lowercase;
+    line-height:20px;
+    cursor: pointer;
+}
+
+sup, small, sub { 
+  font-size:12px;
+  }
+  
+b, strong {
+	color:{color:bold};
+	font-size:15px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+big {
+    color:{color:bold};
+}
+
+i, em {
+	color:{color:italics};
+	font-size:50px;
+	text-transform:lowercase;
+	font-family: 'billybond';
+}
+ 
+a {
+	text-decoration:none;
+    outline:none;
+   text-transform:lowercase;
+    -moz-outline-style:none;
+    color:{color:link};
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    cursor: pointer;
+}
+ 
+a:hover {
+    text-decoration:none;
+    outline:none;
+    -moz-outline-style:none;
+    color:{color:link hover};
+    cursor: pointer;
+}
+
+a.asker {
+    font-size:45px;
+    font-family: 'candreva';
+}
+ 
+p{
+    margin-bottom:10px;
+}
+ 
+img {
+    border:none;
+    max-width:100%;
+    height:auto;
+}
+
+img, .photoset {
+{block:ifshowgrayscale}
+-webkit-filter: grayscale(100%); 
+z-index: -9999999999999999999999999px;
+-webkit-transition: all 0.9s ease-in-out;
+-moz-transition: all 0.9s ease-in-out;
+-o-transition: all 0.9s ease-in-out;
+-ms-transition: all 0.9s ease-in-out;
+transition: all 0.9s ease-in-out;
+{/block:ifshowgrayscale}
+max-width: 100%;
+}
+
+{block:ifshowgrayscale}
+img:hover,.photoset:hover {
+-webkit-filter: grayscale(0%);
+z-index: -9999999999999999999999999px;
+-webkit-transition: all 0.9s ease-in-out;
+-moz-transition: all 0.9s ease-in-out;
+-o-transition: all 0.9s ease-in-out;
+-ms-transition: all 0.9s ease-in-out;
+transition: all 0.9s ease-in-out;
+}
+{/block:ifshowgrayscale}
+
+blockquote {
+	border-left:1px solid {color:blockquote};
+   padding-left:10px;
+    padding-right:25px;
+    margin:5px 5px 5px 10px;
+    line-height:auto;
+	}  
+	
+
+blockquote img {
+   max-width:100%;
+   height:auto;
+   }
+
+
+.caption img {
+   max-width:100%;
+   height:auto;}
+ 
+.posts img {
+   max-width:100%;
+   margin-top:5px;
+   margin-bottom:5px;}
+   
+#wrapping img {
+	float:left;
+	padding-right:5px;
+	padding-top:5px;
+	} 
+	
+#wrapverse {
+	height:225px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-right:4px;
+	overflow:auto;
+}
+	
+#wrapverse img {
+	float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:72px;
+	height:72px;
+	} 
+	
+#wrapverseb {
+	height:180px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:10px;
+   margin-left:4px;
+	overflow:auto;
+}
+	
+#wrapverseb img {
+	float:right;
+	margin-right:1px;
+	margin-left:8px;
+	width:65px;
+	height:100px;
+	border:1px solid #a8a8a8;
+	} 	
+	
+#wrapversec img {
+	float:left;
+	margin-right:8px;
+	width:65px;
+	height:65px;
+	} 
+	
+#wrapversed img {
+	float:right;
+	margin-left:8px;
+	width:65px;
+	height:65px;
+	} 
+	
+.video {
+   width:287px!important;}
+
+.video iframe {
+   width:287px!important;}
+   
+  span {
+      cursor: pointer;
+  }
+  
+div.hr2 {
+	margin-top:5px;
+ 	height: 5px;
+ 	margin-left:5px;
+ 	border-top: 1px dashed #616161;
+ 	border-bottom: 1px dashed #616161;
+ 	background:transparent;
+ 	}
+
+div.hr2 hr {
+ 	display: none;
+ 	} 
+    
+/* general coding ends here */
+	
+	
+/* tabbed content coding */
+
+.tabcontent {
+    padding:10px;
+    width:447px;
+    margin-left:732px;
+    margin-top:45px;
+    margin-bottom:15px;
+    position:fixed;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:535px;
+    text-transform:lowercase;
+    font-size:12px;
+    color:#323232;
+    line-height:20px;
+    cursor: pointer;
+    
+}
+
+/* tabbed content coding ends here */	
+ 
+
+/* this is the container coding */
+
+#post {
+    width:435px;
+    padding-bottom:10px;
+    margin-top:3px;
+}
+
+#entries {
+    padding:10px;
+    width:447px;
+    margin-left:732px;
+    margin-top:45px;
+    margin-bottom:15px;
+    position:fixed;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:535px;
+    text-transform:lowercase;
+    font-size:12px;
+    line-height:20px;
+    {block:PermalinkPage}
+    margin-top:45px;
+    {/block:PermalinkPage}
+}
+   
+/* container coding ends */
+
+
+
+/* this is your links coding */
+
+#links {
+    position:fixed;
+    font-family:bitter;
+    width:400px;
+    margin-top:460px;
+    margin-left:-20px;
+    text-transform:uppercase;
+    font-size:15px;
+    text-align:right;
+    line-height:190%;
+    color:{color:link};
+    }
+   
+#links a{
+    line-height:190%;
+    padding:1px;
+    margin-top:1px;
+    margin-left:3px;
+    text-decoration:none;
+    color:{color:link};
+    -moz-transition-duration:.7s;
+    -webkit-transition-duration:.7s;
+    -o-transition-duration:.7s;
+    }
+   
+#links a:hover {
+    color:{color:link hover};
+   -moz-transition-duration:.4s;
+   -webkit-transition-duration:.4s;
+   -o-transition-duration:.4s;
+     
+    }
+
+/* links coding ends */
+    
+
+ 
+/* this is your pagination coding (how you go from one page to another) */
+
+#pagination {
+    width:100px;
+    font-family:'bitter';
+	font-size:12px;
+	font-style:italic;
+    text-transform:lowercase;
+    margin-top:410px;
+    margin-left:600px;
+    letter-spacing:1px;
+    text-align:right;
+    }
+   
+#pagination a {
+    color:#616161;
+        }
+        
+/* pagination code ends */
+    
+
+/* this is your post information coding */
+
+#info {
+    font-family:calibri;
+    width:450px;
+    height:41px;
+    margin-left:2px;
+    padding-top:10px;
+    word-spacing:1px;
+    font-size:12px;
+    color:{color:infotext};
+    text-transform:lowercase;
+    font-style:normal;
+    text-align:center;
+    background-image: url('{image:info}');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#info a {
+    margin-right:5px;
+    color:{color:infolink};
+    font-style:normal;
+    cursor: pointer;
+    }
+   
+#info a:hover {
+    color:{color:infolink hover};
+    cursor: pointer;
+    }
+    
+/* post info coding ends here */
+
+/* this is your permalink post information coding */
+
+{block:PermalinkPage}
+
+#perminfo {
+    font-family:calibri;
+    width:450px;
+    height:41px;
+    margin-left:2px;
+    padding-top:10px;
+    word-spacing:1px;
+    font-size:12px;
+    color:{color:infotext};
+    text-transform:lowercase;
+    font-style:normal;
+    text-align:center;
+    background-image: url('{image:info}');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#perminfo a {
+    margin-right:5px;
+    color:{color:infolink};
+    font-style:normal;
+    cursor: pointer;
+    }
+   
+#perminfo a:hover {
+    color:{color:infolink hover};
+    cursor: pointer;
+    }
+    
+{/block:PermalinkPage}
+    
+/* post info coding ends here */
+    
+    
+/* this is the code for your tags */
+
+.tags {
+    font-family:calibri;
+    width:435px;
+    text-transform:normal;
+    line-height:120%;
+    font-size:11px;
+    text-align:left;
+    padding-top:1px;
+    padding-bottom:15px;
+    cursor: pointer;
+    -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    }
+.tags a{
+        font-style:italic;
+        color:{color:link};
+        text-transform:lowercase;
+        cursor: pointer;
+     -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    } 
+.tags a:hover{
+        color:{color:link hover};
+        cursor: pointer;
+         -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+   }  
+   
+/* tags coding ends here */
+
+/* this is the code for your permalink page tags */
+
+{block:PermalinkPage}
+
+.permtags {
+    font-family:calibri;
+    width:435px;
+    text-transform:normal;
+    line-height:120%;
+    font-size:11px;
+    text-align:left;
+    padding-top:1px;
+    padding-bottom:15px;
+    cursor: pointer;
+    -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    }
+.permtags a{
+        font-style:italic;
+        color:{color:link};
+        text-transform:lowercase;
+        cursor: pointer;
+     -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    } 
+.permtags a:hover{
+        color:{color:link hover};
+        cursor: pointer;
+         -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+   }  
+   
+{/block:PermalinkPage}
+   
+/* tags coding ends here */
+
+   
+/* this is the code for your asks/answers */
+
+#ask {
+    padding:5px;
+    padding-bottom:10px;
+    padding-left:10px;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:bold;
+    color:{color:asktext};
+    line-height:20px;
+     border-bottom:1px solid #ededed;
+}
+
+#ask img {
+    margin-left:-2px;
+    margin-bottom:-9px;
+    padding:3px;
+}
+#ans {
+    text-align:left;
+    padding:5px;
+    color:{color:text};
+    text-transform:lowercase;
+}
+
+/* asks/answers code ends */
+    
+
+/* tumblr audio code */
+    
+.playerbuttonbg {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 19px;
+    height: 19px;
+    background-color: transparent;
+    padding: 10px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    transition: opacity .7s ease-in-out;
+    -moz-transition: opacity .7s ease-in-out;
+    -webkit-transition: opacity .7s ease-in-out;
+    }
+           
+    .playerbuttonbg:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    }
+   
+    .newplayerbutton {
+    position: relative;
+    width: 19px;
+    height: 19px;
+    overflow: hidden;
+    }
+   
+    .playerbuttonhug {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+       
+    .tumblr_audio_player {
+    height: 90px;
+    width: 270px;
+    -moz-transform: scale(0.60, 0.60);
+    -webkit-transform: scale(0.60, 0.60);
+    -o-transform: scale(0.60, 0.60);
+    -ms-transform: scale(0.60, 0.60);
+    transform: scale(0.60, 0.60);
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    }
+ 
+    .audioimgwrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    width: 79px;
+    height: 79px;
+    }
+           
+    .audioimgwrapper img {
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;                
+    }
+   
+    .trackdetails {
+    width: auto;
+    line-height:14px;
+    border: 0px solid black;
+    display:inline-block;
+    margin-left: 90px;
+    padding-top:20px;
+    min-height:70px;
+    }
+   
+    .audiowrapper {
+    position: relative;
+    display:inline-block;
+    }
+    
+/* tumblr audio code ends here */
+
+/* header coding */
+
+#header{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    width:350px;
+    height:25px;
+    margin-top:10px;
+    margin-left:37px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+	 cursor: pointer;
+}
+
+}
+
+#header2{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    width:350px;
+    height:25px;
+    margin-top:10px;
+    margin-left:37px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+	 cursor: pointer;
+
+}
+
+#header3{
+    background-image:url('{image:active}');
+    background-repeat:no-repeat;
+    width:350px;
+    height:25px;
+    margin-top:10px;
+    margin-left:37px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+	 cursor: pointer;
+}
+
+#header4{
+    background-image:url('{image:inactive}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:300px;
+    height:25px;
+    margin-top:15px;
+    margin-left:70px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+
+}
+
+#header5{
+    background-image:url('{image:plotting}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:300px;
+    height:25px;
+    margin-top:15px;
+    margin-left:70px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+
+}
+
+#header6{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:400px;
+    height:25px;
+    margin-top:15px;
+    margin-left:50px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+
+}
+
+#header7{
+    background-image:url('{image:ship}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:300px;
+    height:25px;
+    margin-top:15px;
+    margin-left:80px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+
+}
+
+#header8{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:325px;
+    height:25px;
+    margin-top:15px;
+    margin-left:75px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+
+}
+
+
+/* header coding ends here */
+
+/* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#323232;
+    font-size:12px;
+}
+
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+}
+
+ul#tabs li {
+   display: inline-block;
+   background-color: transparent;
+   background-image:url('https://static.tumblr.com/ahsqnir/L0Gq3ltki/tabsbg.png');
+   border: dotted 1px #fff;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   color: #323232;
+   cursor: pointer;
+}
+ 
+ul#tabs li:hover {
+   background-color: #112200;
+   background-image:url('https://static.tumblr.com/ahsqnir/L0Gq3ltki/tabsbg.png');
+}
+
+ul#tabs li.active {
+   background-color: #112200;
+   background-image:url('https://static.tumblr.com/ahsqnir/L0Gq3ltki/tabsbg.png');
+}
+ 
+ul#tab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul#tab li {
+   display: none;
+}
+
+ul#tab li.active {
+   display: block;
+} 
+ 
+/* tabbed page code ends */
+
+
+/* tab styling -- best not to touch this unless you know what you're doing */
+
+.tabs {
+ 
+    width:100%;
+    margin-left:0px;
+    display:inline-block;
+   
+    
+}
+
+/* end of tab styling */
+
+/* tab links coding */
+
+   /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+        
+                
+    }
+ 
+    .tab-links li {
+        margin-right:5px;
+        display:inline-block;
+        list-style:none;
+        text-transform:uppercase;
+    }
+ 
+        .tab-links a {
+            padding:7px;
+            display:inline-block;
+            color:{color:links};
+            transition:all linear 0.15s;
+            border-bottom:1px solid transparent;
+            font-size:15px;
+        }
+
+/* end of tab links coding */
+
+/* tab links hover stylilng */
+
+     .tab-links a:hover {
+            text-decoration:none;
+            color:{color:link hover};
+        }
+ 
+    li.active a, li.active a:hover {
+        background:transparent;
+        background:{color:links};
+        font-size:15px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -ms-transition: all .3s;    
+        transition: all .3s;
+    }
+
+/* end of tab links hover styling */
+
+/* tab content -- best not to touch this either */
+
+  .tab-content {
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+/* end of tab content coding */
+
+/* popup styling */
+
+.popup_block{
+    display:none;
+    background:#ccc;
+    color:#323232;
+    padding:20px;
+    border:1px solid #a2a2a2;  /* if you want a solid white pop-up, delete this */
+    float:left;
+    position:fixed;
+    top:274px;
+    left:457px;
+    width:534px; 
+	 height:400px; 
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    -moz-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    box-shadow: 0px 0px 0px #000; /* delete for solid white */
+}
+ 
+*html #fade {position: absolute;}
+*html .popup_block {position: absolute;}
+#fade {
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#000; /* change to #fff for solid white */
+    opacity:0; /* change to opacity:1; */
+}
+
+/* end of styling */
+
+/*navigation page styling */
+
+.navi {
+    color:#eee;
+    display:inline-block;
+    background-color:#transparent;
+    border: dotted 1px #63646a;
+    width:77px;
+    text-align:center;    
+    padding:3px;
+    text-transform:lowercase; 
+}
+
+.navi2 {
+    color:#eee;
+    display:inline-block;
+    background-color:#3a3737;
+    border: dotted 1px #cccccc;
+    width:77px;   
+    padding:3px;
+    text-transform:lowercase;  
+    font-size:8px;
+	 font-family:bitter;
+	 text-align:center;
+	    }
+	    
+.navi3 {
+    background-color:transparent;    
+    border: none;
+    padding:1px;
+    text-transform:lowercase; 
+    font-size:12px;
+	 font-family:bitter;
+	 text-align:center;
+   }	
+   
+.navi4 {
+    color:#616161;
+    display:inline-block;
+    background-color:transparent;
+    border: solid 1px #63646a;
+    width:175px;   
+    padding:3px;
+    text-transform:lowercase;  
+    font-size:12px;
+	 font-family:bitter;
+	 text-align:center;
+	    }       
+	    
+div.naviheader {
+ 	 margin-left:60px;
+ 	 }
+ 	 
+div.navihead {
+ 	 margin-left:40px;
+ 	 }
+	   
+div.shipimg {
+ 	 margin-left:110px;
+ 	 }	    
+ 	 
+div.shipimgm {
+ 	 margin-left:75px;
+ 	 }	 
+ 	 
+div.shipimge {
+ 	 margin-left:140px;
+ 	 }	    
+
+   
+/* end of nav page styling */
+
+/* verse information coding */
+
+#verlinks {
+	width:300px;
+	background-color: transparent;
+	line-height:23%;
+	margin-left:37px;
+	font-size:11px;
+	text-align:center;
+   }
+   
+#verlinks a {
+	font-size:12px;
+	font-family:cambria;
+}
+
+/* verse information coding ends */
+
+ 
+/* this is the credit coding. DO NOT REMOVE */
+    
+   #credit {
+    font-size:9px;
+    font-family:cambria;
+    font-style:italic;
+    letter-spacing:1px;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#credit a {
+    background-color:transparent;
+    padding:5px;
+    position:fixed;
+    right:15px;
+    bottom:10px
+    }  
+ 
+#credit a:hover {
+    background-color:transparent;
+    }    
+    
+/* credit coding ends here */
+
+
+ /* Making IE6 Understand Fixed Positioning */
+*html #fade {
+ position: absolute;
+}
+*html .popup_block {
+ position: absolute;
+}
+    {CustomCSS}
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+   
+pre {
+   white-space: pre-wrap;      
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;    
+   white-space: -o-pre-wrap;  
+   word-wrap: break-word;
+   }    
+ 
+.toggle a.toggle-trigger {
+    display:inline-block;
+    letter-spacing:2px;
+    text-align:center;
+    padding: 2px;
+    position:relative;
+    text-decoration: none;
+    color:#fff; /*change your faq question color here */}
+ 
+.toggle a.toggle-trigger:hover {
+    text-decoration: none;}
+ 
+.toggle a.active {
+    text-decoration: none;
+    color:#fff;
+ 
+.toggle .toggle-content {
+    background-color:transparent;
+    text-align:left;
+    padding: 10px 20px 10px 20px;
+    color:#ffffff; /*change your answer text color here */}    
+    
+    
+ 
+    </style>
+		<link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">    
+    
+    		</head><body>
+<!-- this is the meat of the theme and makes it what it is -->
+
+<div id="links">
+<div class="tabs">
+<ul class="tab-links">
+<li class="active">
+<a href="/" title="home">00.</a></li>
+<li><a href="#tab2" title="questions?">01.</a></li>
+<li><a href="#tab3" title="guidelines">02.</a></li>
+<li><a href="#tab4" title="biography">03.</a></li>
+<li><a href="#tab5" title="verses/timelines">04.</a></li>
+<li><a href="#tab6" title="navigation">05.</a></li>
+</ul>
+</div>
+</div>
+
+<div id="hoverboxleft">
+<div id="hovercontentleft">
+
+<p><h5>canon divergent/<br><b>SHIELD affiliated</b>.</h5>
+
+<p><h5>mutually exclusive<br>private + selective</h5>
+
+<p><h5>alternate canon <b>BROCK RUMLOW</b></b></h5>
+
+<p><h5>low activity/activity on demand.</h5>
+
+<p><h5>penned by <a href="http://mangohub.tumblr.com/n">monroe</a></h5>
+
+</div>
+</div>
+
+<div id="hoverboxright">
+<div id="hovercontentright">
+<h2>updates.</h2>
+
+<h5>interactions;</h5><br><br>
+
+<b>asks</b>; 25
+<p><b>threads</b>; 9/16 owed
+<p><b>drafts</b>; 10
+<p><b>queue</b>; 5
+
+<br />
+
+<h5>meme schedule;</h5>
+
+<p><b>Su/Tu/Th</b>, 1:15pm EST.
+
+<h5>status;</h5>
+
+<i>offline</i>
+
+</div>
+</div>
+
+<div id="quotes">
+Existence is random. Has no pattern save what we imagine after staring at it for too long. No meaning save what we choose to impose. This rudderless world is not shaped by vague metaphysical forces. It is not God who kills the children. Not fate that <b>BUTCHERS</b> them or destiny that feeds them to the dogs. It’s us. <b>ONLY US</b>. Streets stank of fire. The void breathed hard on my <b>HEART</b>, turning its illusions to ice, shattering them. Was reborn then, free to scrawl own design on this morally blank world.
+<br />
+
+<!-- Statcounter code for Rumlow
+http://readyforyours.tumblr.com on Tumblr -->
+<script type="text/javascript">
+var sc_project=10209418; 
+var sc_invisible=0; 
+var sc_security="3593011f"; 
+var sc_https=1; 
+var sc_remove_link=1; 
+var scJsHost = "https://";
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><img class="statcounter"
+src="https://c.statcounter.com/10209418/0/3593011f/0/"
+alt="site stats"></div></noscript>
+<!-- End of Statcounter Code -->
+
+</div>
+
+<!-- tabs -->
+<div class="tabs">
+
+<!--  TAB 1  -->
+<div id="tab1" class="tab active">
+<div class="tab-content">
+<div id="entries">
+{block:Posts} 
+{block:NoRebloggedFrom}
+{block:RebloggedFrom}
+{ReblogParentName}
+{/block:RebloggedFrom}
+{/block:NoRebloggedFrom}
+
+{block:ContentSource}<!-- {SourceURL}
+{block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+<div id="post">
+ 
+{block:Text}<h1>{block:Title}{Title}{/block:Title}</h1>{Body}{/block:Text}
+ 
+{block:Photo}{LinkOpenTag}<div align="center"><img src="{PhotoURL-500}"></div>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+ 
+{block:Photoset}{Photoset}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+ 
+ {block:Quote}<big><big>"{Quote}"</big></big>{/block:Quote}
+ 
+{block:Link}<h1><a href="{URL}" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}{hw}
+ 
+{block:Chat}{block:Title}<h1>{Title}</h1>{/block:Title}{block:Lines}{block:Label}<b>{Label}</b>{/block:Label} {Line}<br>{/block:Lines}{/block:Chat}{hw}
+ 
+<!--AUDIO POST-->
+{block:Audio}
+{block:AudioPlayer}
+<div class="audiowrapper">
+{block:AlbumArt}
+<div class="audioimgwrapper"><img src="{AlbumArtURL}"></div>
+{/block:AlbumArt}
+ 
+<div class="playerbuttonbg">
+<div class="newplayerbutton">
+<div class="playerbuttonhug">
+{AudioPlayerWhite}
+</div></div></div>
+<div class="trackdetails">
+{block:TrackName}<b>Track:</b> {TrackName} <br/>{/block:TrackName}
+{block:Artist}<b>Artist:</b> {Artist} <br/>{/block:Artist}
+{block:Album}<b>Album:</b> {Album} <br/>{/block:Album}
+</div></div>
+{/block:AudioPlayer}
+<br /><br />
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+{/block:Audio}
+ 
+{block:Video}{Video-400}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+ 
+{block:Answer}<div id="ask"><i>{Asker}</i><br />left a file to be read:<br /><br />{Question}</div><div id="ans"><div id="wrapping">{Answer}</div><div style="clear:both"></div></div>{/block:answer}
+{block:IndexPage}
+ 
+<div class="toggle"> 
+<div id="info"> 
+{block:Date}
+<a href="{Permalink}" title="posted {TimeAgo} - {ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{ShortYear}"><span class="th th-skull" style="font-size:150%;"></span></a>{/block:Date}
+<a href="{Permalink}" title="{NoteCountWithLabel}"><span class="th th-skull-o" style="font-size:150%;"></span></a>
+
+{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="th th-skull" style="font-size:150%;"></span></a> {/block:RebloggedFrom}{block:ContentSource} 
+<a title="source: {SourceTitle}" href="{SourceURL}"><span class="th th-skull-o" style="font-size:150%;"></span></a>{/block:ContentSource}   {/block:RebloggedFrom} <a href="#" class="toggle-trigger" title="click for tags"><span class="th th-target-o" style="font-size:150%;"></span></a> <a href="{ReblogURL}"target="_blank" title="reblog this post"><span class="th th-reload" style="font-size:135%;"></span></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+</div>
+
+<div class="toggle-content">
+<div class="tags">
+{block:HasTags}
+{block:Tags}
+<a title="{Tag}" href="{TagURL}">{Tag}</a>
+&nbsp;&nbsp;
+{/block:Tags}
+{/block:HasTags}
+</div></div></div>
+{/block:IndexPage}
+
+
+{block:PermalinkPage}
+<div id="perminfo"> 
+{block:Date}
+<a href="{Permalink}" title="posted {TimeAgo} - {ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{ShortYear}"><span class="th th-spaguetti" style="font-size:150%;"></span></a>{/block:Date}
+<a href="{Permalink}" title="{NoteCountWithLabel}"><span class="th th-knife" style="font-size:150%;"></span></a>
+
+{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="th th-spaguetti" style="font-size:150%;"></span></a> {/block:RebloggedFrom}{block:ContentSource} 
+<a title="source: {SourceTitle}" href="{SourceURL}"><span class="th th-knife" style="font-size:150%;"></span></a>{/block:ContentSource}   {/block:RebloggedFrom}
+<a href="{ReblogURL}"target="_blank" title="reblog this post"><span class="th th-reload" style="font-size:150%;"></span></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</div>
+
+<div class="permtags">
+{block:HasTags}
+{block:Tags}
+<a title="{Tag}" href="{TagURL}">{Tag}</a>
+&nbsp;&nbsp;
+{/block:Tags}
+{/block:HasTags}
+</div>
+{/block:PermalinkPage}
+
+<div class="postnote">
+{block:PostNotes}{PostNotes-16}{/block:PostNotes}
+</div>
+</div>
+{/block:Posts}
+
+    </div></div>
+    
+<!-- TAB 2  -->
+<div id="tab2" class="tab">
+<div class="tabcontent">
+<h1>mission parameters</h1>
+(1) <b>messages:</b> this blog is where anon hate goes to die. I will not post it, I will not drop anything on the dash, so don't even waste your energy, loves. <br /><br />
+(2) <b>memes:</b> I accept memes from everyone, but priority with turning them into full threads will go to those that are open to plotting. <br /><br />
+(3) <b>plotting:</b> this blog is plot <i>intensive</i>. I prefer lengthy, plotted interactions when it comes to threads, but I'm open to anything to get the ball rolling.
+<iframe id="ask_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/readyforyours.tumblr.com" frameborder="0" scrolling="no" width="430" height="300"></iframe>
+<br />
+<br />
+<iframe id="submit_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/submit_form/readyforyours.tumblr.com" frameborder="0" scrolling="no" width="430" height="300"></iframe>
+<br />
+<br />
+<br />
+<br />    
+    </div>
+    </div>
+    
+<!--  TAB 3  -->
+<div id="tab3" class="tab">
+
+<div class="tabcontent">
+<h1>code of conduct</h1>
+<div id="header">guidelines.</div>
+
+<div class="navihead">
+    
+<p><a href="#une" class="navi4" style="font-size:12px">the writer</a> <a href="#deux" class="navi4" style="font-size:12px">contact info</a> 
+
+<p><a href="#trois" class="navi4" style="font-size:12px">if nothing else read this</a> <a href="#quatre" class="navi4" style="font-size:12px">notes on portrayal</a>
+
+<p><a href="#sinq" class="navi4" style="font-size:12px">writing/plotting/interaction</a>  <a href="#siix" class="navi4" style="font-size:12px">shipping</a>
+
+<p><a href="#sept" class="navi4" style="font-size:12px">anon & drama </a>  <a href="#huit" class="navi4" style="font-size:12px">mains &amp; exclusives</a>
+
+<p><a href="#neuf" class="navi4" style="font-size:12px">tagging</a>  <a href="#dix" class="navi4" style="font-size:12px">credits</a>
+
+</div>
+
+<a name="une"></a><div id="header">the writer</div>
+<p>
+<p>
+hey glitterbeans. I'm <b>MONROE</b>. 28/F/EST. 
+
+<p>I'm a full time barista, so my activity largely depends on scheduled & queued posts during my work week & while my usual days off are Thurs/Friday, I am a slave to the needs of caffeinated corporate America, so that's not a rock solid <strike>panda</strike> constant.<br /><br />
+
+<a name="deux"></a><div id="header">contact info</div>
+
+
+<h4>monroe#2815<br>discord (mutuals only)</h4><h4>facebook<br>mutuals only</h4>
+<h4><a href="https://www.instagram.com/obiwanmonroebi/">obiwanmonroebi</a><br>instagram</h4><h4><a href="https://mangohub.tumblr.com/n">dashboard</a><br> full navigation</h4>
+<h4><a href="https://mangohub.tumblr.com/">@mangohub</a><br>rp personal</h4><h4><a href="https://idumean.tumblr.com">@idumean</a><br>Jonathan</h4>
+
+<p>
+<br />
+
+<a name="trois"></a><div id="header">if nothing else read this</div>
+<p>
+<p>
+I will unfollow for the following;
+
+<ul>
+<li>unannounced inactivity in excess of a month
+<li>you become exclusive with a version of my muse. 
+<li><b>untagged nsfw, excessive gore, transphobia, nazism, pedophilia, antisemitism & racism</b> are the big ones. I will unfollow & block for the last five.
+    
+</ul>
+
+<p>Start drama with me about my friends? Block me now - because we’re done.
+
+<br />
+
+<a name="quatre"></a><div id="header">notes on portrayal</div>
+<p>
+<center><b>THIS BLOG IS HEAVILY CANON DIVERGENT </b>& heavily headcanon influenced. Please read the biography & verses.<br /></center>
+<br />
+
+<p><i>most important</i>: I will <b>not</b> change my interpretation of my muse. My muse is my own entity. If I start noticing that you’re ignoring parts of my character because you don’t like it/don’t agree with it, I reserve the right to drop all threads without warning. I don’t write as much as I do on my character to have it treated like it’s optional.
+
+<br />
+
+<a name="sinq"></a><div id="header">on writing, plotting &amp; interaction</div>
+<p>
+This blog is <b>PRIVATE</b>, with decided preference towards mutuals only - however my inbox remains open to everyone. It is also very <b>PLOT INTENSIVE</b>. I prefer <b>longer</b> threads, too - my typical average is 300-500 words, but I'm flexible with plotting.
+<br /><br />
+I am open to both canon sources, multifandom crossovers, OCs.<br />
+<br />
+
+Please move replies to a new thread instead of reblogging the ask. It makes it much easier for me to track thread.
+<br /><br />
+
+<center><b>PLEASE DO NOT SEND ME "WANNA RP?"</b></center>
+
+<p>instead, toss me a few plots you've been craving to start stuff between our muses. i also have plotting calls, & memes. i prefer intensively exploring chemistry between muses, & 'wanna rp?' doesn't really give me very much to work with.
+
+<blockquote>if you hit the heart on a plotting call, i will typically go through your wishlist tag or verses &/or message you with something i already have in mind so we can start things off.</blockquote>
+
+<p>My preferred style is multi para & novella. You will see shorter threads on my blog, as well, but I generally prefer at least a paragraph's worth of interaction if possible. I also love IC texting via a chat thread for short interactions. I generally <b>WILL NOT</b> reply to one-liners - I lose interest in them very quickly because I feel like they generally don't give me quite enough to advance, plotwise.
+<br /><br />
+
+<blockquote>
+    Multi-para, to me, is at least 2-4 paragraphs while novella is anything over 1-1.5k word length.
+</blockquote>
+<br />
+
+<p>I primarily use icons & small text in terms of formatting.
+
+<br /><br />
+<a name="siix"></a><div id="header"> on shipping</div>
+<p>
+I ship chemistry. 
+
+<br /><br />
+
+<a name="sept"></a><div id="header">anon feature & drama</div>
+<p>At this time, the anonymous feature & my submit box are both disabled due to past abuse. I don't really have plans to turn it back on in the foreseeable future but in the event I do, anon hate will be deleted without commentary.<br />
+
+<p>Additionally, I also do not accept anonymous critique. I am <b>MORE</b> than happy to accept critique given off anon, I just find that the anon feature enables more cruelty than it does productivity or constructive criticism.<br />
+
+<p>Finally, I don't accept anonymous commentary of any sort regarding my partners. If there is valid reason to believe someone seen on this blog is problematic, please come to me off anon - otherwise I have to assume there's an ulterior motive.
+
+<p>Start drama with me about my friends? <b>Block me now - we’re done</b>.
+
+<br />
+
+<a name="huit"></a><div id="header">Mains & exclusives</div>
+<p>
+<p>
+<center><b>exclusives will be marked with **</b></center>
+
+<h4><a href="/">@tbd</a><br>tbd</h4><h4><a href="/">@tbd</a><br>tbd</h4>
+
+<p><b>IMPORTANT NOTE:</b> all exclusives have ooc communication as a cornerstone. I recognize that life becomes busy as hell - however, if we go a month or more without <b>ANY FORM OF INTERACTION IC OR OOC</b>, I reserve the right to remove someone from the list & open the spot up to another.
+
+<br /><br />
+
+<a name="neuf"></a><div id="header">tagging</div>
+<p>
+<p>
+There will be triggering content & mature themes present throughout this blog. I will tag them accordingly <b><i>( ____ TW, NSFW)</i></b>, I will also make a concentrated effort to put certain themes within threads under a read more.<br />
+<br />
+Non-triggering but squick inducing content will be tagged with a content warning <br />
+<b><i>( ' _____ CW' )</i></b><br />
+<br />
+Custom tag requests; If you have additional, please let me know.<br />
+<br />
+Smut will rarely be present. I tend to fade to black/timeskip for dash threads as I'm far more comfortable writing it on Discord.
+<br /><br />
+
+
+<a name="dix"></a><div id="header">credits</div>
+<p>
+<p>
+my starer call banners are from a template by <b>CONCINNITYTM</b> that can be found <a href="https://dear-indies.tumblr.com/post/174535952326/concinnitytm-quick-fix-a-banner-template">here</a>.<br />
+<br />
+my theme's coding &amp; related images were done by the lovely <a href="houseofsol.tumblr.com">houseofsol</a>.<br />
+<br />
+all other icons & banners found on this blog are my own unless otherwise credited.
+<br /><br />
+<br />
+<br />
+<br />
+<br />
+<br /> 
+   
+</div> </div>
+
+    
+<!--  TAB 4 -->
+
+
+<div id="tab4" class="tab">
+<div class="tabcontent">
+ <div id="headernav">
+<div id="heading"><h1>biography</h1></div>
+<ul id="tabs">
+     <li class="active" style="width:125px">youth & academic rec.</li>
+     <li style="width:125px">pre-shield / navy seals</li>
+     <li style="width:125px">STRIKE/SHIELD & DOD contract</li>
+     <li style="width:125px">Civil War & deprogramming</li>
+     <li style="width:125px">Infinity War & Endgame</li>
+     <li style="width:125px">Additional notes.</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+
+<hr><div id="heading"><h1>the early years</h1></div><hr>
+
+<p>For the longest time, it was just them. Him, his ma, & his step-dad in a smaller apartment on the Lower East Side of Manhattan. Any early files on his childhood are largely redacted. What <b>IS</b> known is that his name was originally <b>andreas provenzano</b>, & he wasn't the worst student, but he was definitely more focused on athletics & his social life than he should have been at first.
+
+<p>He had no contact with his birth father, one <a href="https://en.wikipedia.org/wiki/Bernardo_Provenzano">Bernardo Provenzano</a>, or his mother's father, one <a href="https://en.wikipedia.org/wiki/Salvatore_Riina">Salvatore Riina</a>, nor any other member of his family outside of his mother, & younger half-sister. 
+
+<p><b>TRIGGERING CONTENT:</b>
+<blockquote>
+    <p>From ages 7 to 15, Brock was sexually abused in a manner of ways by his step father. Whether his mother was aware of this or not is not known, but given the elder's tendency to become violent when intoxicated coupled with existing drug & alcohol abuse, the lack of confrontation is hardly surprising.
+</blockquote>
+
+<p>His step-dad disappeared one night shortly after Brock's 15th birthday when he went out to buy beer. By the time his step-son came home from work, Anna Vittoria was already concerned. A police report was eventually filed, but there were no leads. He was declared legally dead in 1995 after being missing for seven years. The family was allowed to collect his life insurance, which Anna used to improve & otherwise update the family restaurant.)
+
+<p>The truth is that after eight years of being at his step-father's <i>disposal</i>, & then seeing his yes start to wander to a younger, more vulnerable target in <a href="https://darcywho.tumblr.com/">his baby half-sister</a>, Brock had had enough. He lured his step-father out of the apartment, & ensured that the man could never lay a hand in either of them ever again. He's never told anyone, but it's awfully convenient that his bag was supposedly packed & never recovered, & yet none of his things were missing from the apartment they shared.
+
+<p>At the urging of a high school guidance counselor - who could see the damage his home life was doing him, Brock enrolled in a new & controversial program sponsored by a revolutionary public high school's collaborative efforts with New York University, catapulting him beyond regular curriculum by the time he was in the 9th grade. This meant getting up early, & getting home late. Brock continued with the program even after his step-father went missing. 
+
+<p>By the time he was in 11th grade, he had completed requirements for graduation as well as an associates. Instead of completing the second half of his junior year & continuing onto his senior year, he opted to enroll in NYU. His bilingual background came in handy - he graduated NYU in the spring of 1991 with a <b>B.A. IN INTERNATIONAL RELATIONS</b> (regional specialization in the middle east & lnguage specialization in both Urdu & Arabic),& a minor in <b>NATIONAL SECURITY STUDIES</b>, as well as a <b>M.A. in international relations</b> with a concentration in <b>Russian & Slavic Studies</b>. He completed his study away requirement for undergrad at a partner school in <b>Berlin</b>, where he additionally studied German in an immersive language environment. 
+
+<p>Pushing himself especially hard is something a little too normalized to Brock, so pushing through the program at an accelerated rate came easily to him. He finished the program early, & used many of his credits to qualify for the Masters program - MAIR, completing it in record time.
+
+<hr><div id="heading"><h1>academic record</h1></div><hr>
+
+<blockquote>
+    <p>- B.A. in <b>international relations</b>, '90 (spring)
+        <blockquote>
+            <p>- regional specialization in the <b>middle east</b>.
+            <p>- language specializations in <b>Urdu & Arabic</b>, as well as working fluency in <b>German</b>.
+            <p>- study away - <b>Berlin</b>.
+        </blockquote>
+    <p>- M.A. In <b>international relations</b>, '91 (spring)
+        <blockquote>
+            <p>- concentration in <b>Russian & Slavic Studies</b>.
+            <p>- language specializations in <b>German & Russian</b>.
+        </blockquote>
+        
+    <p>- <b>general language fluency</b> in Italian, & Urdu. <b>working fluency</b> in Arabic, German, & Russian to the capacity he can be deployed to command local forces & support sections as needed.
+        </blockquote>
+
+</li>
+
+<li>
+
+<hr><div id="heading"><h1>service record & pre-shield life</h1></div><hr>
+
+
+<p>He joined the Navy in ’91, immediately after graduation from his final degree, & pushed himself hard enough that by the end of the year, he was an esteemed member of a small class of Navy SEALs, joining Naval Special Warfare Development Group/<b>DEVGRU</b>. He took the name <b>BROCK RUMLOW</b> during this time, after an intructor who relentlessly pushed him to be <b>BETTER</b> & a college professor who had shown more faith in him than he'd had in himself.
+
+<p>His first <b>MAJOR</b> duties included <b>THE BATTLE OF MOGADISHU</b> in Somalia, which took place in late ‘93 during the Somali Civil War, and <b>OPERATION DESERT STRIKE</b> in September of 1996. It was during this time he married his girlfriend of five years. Before he was contracted out on professional loan to a joint mission between the DoD, CIA, & SHIELD in 2005, he had climbed the ranks to Naval Rank <b>O-4</b>. He continued active service during the course of his professional loan.
+
+<p>Originally fronted as a member of the <b>RED SQUADRON</b> (Assault Team) alongside his long time friend <b>JACK ROLLINS</b>, his actual role was one of a little over a hundred members of the covert <b>BLACK SQUADRON</b> (Reconnaissance & Surveillance Team). This information is known only to five individuals: <a href="http://en.wikipedia.org/wiki/Joseph_D._Kernan">Vice Admiral Joseph D. Kernan</a>, Rear Admiral Edward G. Winters, III, Nick Fury, Maria Hill, and mostly recently, S.H.I.E.L.D. Director Phil Coulson. It was his time on the Black Squadron that put him on the radar of the CIA's <b><i>SPECIAL ACTIVITIES DIVISION'S</i></b> Special Operations Group for tactical paramilitary operations.
+
+<p>His being scouted was additionally direct result of his fringe but effective involvement in the events preceeding the Battle of Tora Bora in Afghanistan. In December 2001, SAD/SOG tracked down Osama bin Laden in the rugged mountains near the Khyber Pass. Despite the operation being largely ineffectual, his personal efforts & command effort to set up the operation as a whole were taken into account & later used as a basis for his recruitment. 
+
+<p>He was allowed to be cross-recruited to STRIKE in an effort to strengthen inter-agency intelligence ties laterm under the guise of a severe need to root out a potential terrorist sleeper cell that would later come to light as the rebirth of HYDRA. His recruitment to SOG means that he periodically is pulled from his SHIELD/STRIKE duties to assist in other operations. Those gaps in his time at SHIELD led to the need for a co-commander.
+
+<blockquote>
+<p>- After Steve Rogers left the Retreat & assumed duties at SHIELD, he was offered the position, giving Brock a much needed break to assume other duties. Prior to this, Jack Rollins served as acting Commander during his absences.
+</blockquote>
+
+<p>His SOG career runs parallel to his time with STRIKE, periodically taking him away for spurts of varying time not to exceed the <b><i>MAJORITY</i></b> of a year. In 2009, he participated in a follow up of his time in Tora Bora, taking part in an intelligence surge. Many of his operations with SOG are heavily redacted & exist only on paper, & he refuses to talk about them once he's back home & on the clock for SHIELD.
+
+</li>
+
+<li>
+
+</li>
+
+<li>
+
+</li>
+
+<li>
+
+</li>
+
+<li>
+
+</li>
+
+<li>
+
+<p>SHIELD
+<p>
+<b>strategic homeland intervention, enforcement and logistics division</b><br /><br />
+
+Since his time with SHIELD, he’s been involved with efforts to contain the Abomination in Harlem, NYC (2006), the second raid on one of Vanchat’s gulag under the orders of Coulson, <a href="http://marvelcinematicuniverse.wikia.com/wiki/Rescue_in_Bahrain">the Rescue in Bahrain</a>, the recovery of the <a href="http://marvelcinematicuniverse.wikia.com/wiki/Zodiac">Zodiac</a> (2014), the re-taking of the Lemurian star, & the <a href="http://marvelcinematicuniverse.wikia.com/wiki/Battle_of_Washington,_D.C.">Battle of Washington, D.C.</a><br />
+<br />
+His loyalty to S.H.I.E.L.D. supercedes his loyalty to HYDRA easily, given his recruitment was based on his ability to maintain deep cover. He walks a fine line to keep the balance so his superiors don't catch on to the dangerous game he's playing. HYDRA rewards compliance, and should his deception, and his true loyalty, come to light, he knows he'll be the one in the chair.<br />
+<br />
+His wife & unborn child were killed just before their ninth anniversary. This loss nearly broke him, & he took a leave of absence to deal with the grief. He suspects, to this day, that it may have played a part in his promotion from Commander (O-5) to Captain (O-6), which occurred approximately a year after, in the aftermath of the Battle of New York.<br />
+<br />
+
+<p>post-triskelion
+<p>
+<b>recovery &amp; duty restriction</b><br /><br />
+
+After the events at the Triskelion, Brock was found, nearly crushed under the rubble - barely breathing but very much alive. Given the severity of his injuries, drastic measures had to be put in place. Under HYDRA, he'd been dosed with a fusion of their new trial serum. It's the only thing that kept him breathing, his damaged body attempting to regenerate even as he burned alive.<br />
+<br />
+It was Dr. Cho, a doctor contacted by SHIELD for her work on cellular regeneration technology, who proposed him as a candidate for her prototype Cradle. After a few rounds of trial & error, it was able to minimize the damage & rebuild a large portion of his damaged skin. The deepest scarring -- around his eyes & on his arms & chest, remains as a faded testament to his experience.
+<br />It took a year for him to be back on his feet fully. Until then, his duty was largely restricted off of field work as he took more of a training & coordinator's role, reverting back to his handler training from HYDRA. He was allowed an office at a new, undisclosed facility while it was undergoing construction in the hopes that giving him work & keeping him useful would aid his recovery while simultaneously allow for him to be kept under close observation. He agreed to the compromise.<br />
+<br />
+Some of the events he oversaw while working as handling coordinator;
+<blockquote>
+<p>- February 21st, 2015; Placement of Bobbi Morse to facilitate Jemma Simmons' escape from HYDRA laboratories.
+<p>- April 27th, 2015; <a href="https://marvelcinematicuniverse.wikia.com/wiki/Attack_on_the_Arctic_HYDRA_Research_Facility">Attack on the Arctic HYDRA Research Facility</a>
+<p>- April 29th, 2015; <a href="https://marvelcinematicuniverse.wikia.com/wiki/Attack_on_the_HYDRA_Research_Base">Attack on the HYDRA Research Base</a>
+<p>- May 3rd, 2015; <a href="https://marvelcinematicuniverse.wikia.com/wiki/Battle_at_the_Salvage_Yard">Battle at the Salvage Yard</a>
+<p>- May 6th, 2015; <a href="https://marvelcinematicuniverse.wikia.com/wiki/Battle_of_Sokovia">Battle of Sokovia</a>
+<p>- Ongoing briefings regarding SOG activities in Syria, Pakistan, Iran & Somalia, for which he was promoted from O-7 to Rank O-8 - Rear Admiral (lower half).
+</blockquote>
+The Battle of Sokovia was yet another turning point; given the large scale of the operation & the then-limited scope of the New Avengers Facility communication array, Brock had temporarily relocated back to New York to work in Tony's lap. One drone, highly damaged & left behind by Ultron, was able to transmit his location through a HYDRA uplink.<br />
+<br />
+He should have known better than to believe in luck. In the chaos after Ultron, all the remnants of HYDRA had needed was one single slip up in attention, and then he’s gone, his apartment burned to the ground as a notice, trail entirely cold.</br />
+<br />
+
+<p>crossbones
+<p>
+<b>in play &amp; civil war</b><br /><br />
+The building that came down on him wasn’t the only thing that tore him to ragged pieces. H Y D R A had managed t h a t long before. The last fully coherent thought of his own had been the look of abject horror at the kid strapped down to that chair, undermining everything he’d ever been told about HYDRA, and how they took no prisoners, among others.<br /> 
+<br />
+He’d been next. His reaction had been a failure, his reconditioning had been imminent. Given the immediate need in the field, they’d merely planted a seed, waited for it to sprout. The trauma did the rest. When he woke up in SHIELD’s Medical bay, something had felt off, like an itch beneath the skin he couldn’t place, couldn’t scratch.<br />
+<br />
+He wasn’t supposed to survive a helicarrier falling on him. As he moved up in ranks through HYDRA, he'd been given experimental drugs that boosted him across the board; higher <b>STAMINA & METABOLISM</b>, faster <b>RECOVERY, THOUGHT PROCESS, SPEED</b>. They gave him an experimental serum that put him on a level comparable to the good Captain himself. After HYDRA snatched him, during the Battle of Sokovia & right under the nose of the Avengers themselves, it was time to put him to use.<br />
+<br />
+When he surfaces over a year later, there’s no trace of the agent who’d gone in deep cover. { Brock Rumlow is gone. } HYDRA had learned its lesson with its earlier Asset; order cannot merely be programmed as a layer over pre-existing conditioning. Order must be the o n l y conditioning. Where a person cannot be bent, where compliance comes from force, they must be broken entirely and made new. After all, HYDRA is down an asset, and Crossbones is a perfect replacement.<br />
+
+<p>the raft
+<p>
+<b>deprogramming &amp; moving forward</b><br /><br />
+The bomb following his attack on the IFID headquarters in Lagos didn't kill him. He was knocked from the sky & left for dead, scooped up in the aftermath & taken to a secured government facility for psychological analysis. His whereabouts have been unknown since.<br />
+<blockquote>
+<p>- more info can be found <a href="https://readyforyours.tumblr.com/a">here</a>.
+</blockquote>
+
+</li>
+
+</div></div> </div>
+    
+<!-- TAB 5 -->
+<div id="tab5" class="tab">
+<div class="tabcontent">
+ <div id="headernav">
+<div id="heading"><h1>verses &amp; timelines</h1></div>
+<ul id="tabs">
+     <li class="active" style="width:100px">canon</li>
+     <li style="width:100px">fandom</li>
+     <li style="width:100px">alternate</li>
+     <li style="width:100px">private</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+
+<!-- main verse -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">redemption is for suckers / main.</div></a>
+
+<div class="toggle-content"> 
+<div id="wrapverse"><img src="https://i.imgur.com/sDQofjc.png"> <b>main verse</b>. After doing his time & grinding out a career as one of the Navy's top SEALs, Brock Rumlow was thrown on the radar of the CIA's Special Activities Division's <b>Special Operations Group</b> for tactical paramilitary operations. He was allowed to be cross-recruited to SHIELD in an effort to take up the mantle of STRIKE Commander & root out what was suspected to be a parasitic infiltration happening right under SHIELD's nose.
+
+<p>this verse follows the events described in his biography, & is live-updated to be current with the Marvel Cinematic Universe. Currently, it's updated through: <b>Civil War</b> (2016).
+
+additional details can be found <a href="http://readyforyours.tumblr.com/a">here</a>.<br />
+
+<div id="header">open verse / default for interaction</div>
+
+</div>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><a href="#?w=534" rel="c01" class="poplight" title="full verse description, headcanons, & ship info, as well as verse-specific notes, world-building, glossary, & triggers as-needed."><b>main</b> verse specific, headcanons & relationships</a>
+
+</div>
+<div class="hr2"><hr /></div>
+
+</div></div>
+
+</li>
+<li>
+
+<!-- main verse -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">the mortal instruments</div></a>
+
+<div class="toggle-content"> 
+<div id="wrapverse"><img src="https://i.imgur.com/sDQofjc.png"> <b>SHADOWHUNTERS</b>. Once, he was one of the Clave's elite Centurion, a warrior above the rest who could go toe-to-toe with any demon. Training like that made him a target, & it cost him... everything. After losing his wife during a mission gone very, very wrong, Andreas Highmercy disappeared from Idris. That was ten years ago. Now he works as a cafe owner in New York City under the name Brock Rumlow, & his life as a Shadowhunter was an entire lifetime ago.
+
+<div id="header">open verse / active</div>
+
+</div>
+
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+
+<p><a href="#?w=534" rel="a01b" class="poplight" title="full verse description, headcanons, & ship info, as well as verse-specific notes, world-building, glossary, & triggers as-needed.">verse specific headcanons & relationships</a>
+
+</div>
+<div class="hr2"><hr /></div>
+
+</div></div>
+
+<!-- alternate verse one -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">behavioral analysis unit</div></a>
+
+<div class="toggle-content"> 
+FBI Profiler. Red Cell Team leader. Special Agent Rumlow. He’s been a lot of things in his time. Now maybe he just might to be a hero.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>SELECTIVE</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>DARCY LEWIS</b> — <a href="https://darcywho.tumblr.com">darcywho</a>, <b>SISTER</b><br />
+<br />
+<i>tags</i><br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%E1%B4%98%CA%80%E1%B4%8F%D2%93%C9%AA%CA%9F%E1%B4%87%CA%80%20(verse)">verse link</a><br />
+<a href="https://criminalminds.wikia.com/wiki/Criminal_Minds">source material</a>
+
+
+<br /><br />
+<a href="#?w=534" rel="a01" class="poplight" title="behavioral analysus unit">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse two -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">the purge</div></a>
+
+<div class="toggle-content"> 
+The problem is when you lose your way, who’s going to pick up the pieces and lead you back to the path?<br />
+<br />
+He’d been normal, once. He can’t remember what that feels like now. Three years ago, he’d had a family. A son who’d loved him beyond anything. It’d been ripped away the night of the Purge, and he’d been left to pick up the pieces.<br />
+<br />
+The next year, he’d gone on a rampage that resulted in a bloodbath. The aftermath left him worse off than he’d been. Haunted, hating himself. He’d shut everyone out. Now, he prowls the streets on Purge night silently playing guardian to anyone unlucky enough to be caught outside.<br />
+<br />
+This year, everything changes.<br />
+<br />
+Brock is an EMT, one of the rare volunteers who stalks the streets on the night of the bloodbath, treating the injured. He’s got nothing to lose, & nothing keeping him in the safety of his apartment on a night like this. But he has a whole host of guilt, & carries a pain he can’t let go of. Each life he saves, he feels the vice loosen a bit.<br />
+<br />
+But don’t for a moment think he won’t lash out if provoked. The Purge is kill, or be killed, after all.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>OPEN</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>DARCY LEWIS</b> — <a href="https://darcywho.tumblr.com">darcywho</a>, <b>SISTER</b><br />
+<b>BUCKY BARNES</b> — gxfttomankind<br />
+<br />
+<i>tags;</i><br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%E1%B4%98%E1%B4%9C%CA%80%C9%A2%E1%B4%87%20(verse)">verse link</a><br />
+<a href="https://en.wikipedia.org/wiki/The_Purge_(film_series)">source material</a>
+
+
+<br /><br />
+<a href="#?w=534" rel="a02" class="poplight" title="the purge">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse three -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">the bodyguard</div></a>
+
+<div class="toggle-content"> 
+The verse is flexible, typically used for <b>KINGS</b>, <b>POLITICAL ANIMALS</b>, <b>MADAM SECRETARY</b> & others.<br />
+<br />
+More info TBD.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>OPEN</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>NAME</b> — relationship<br />
+<br />
+<i>tags</i><br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%CA%99%E1%B4%8F%E1%B4%85%CA%8F%C9%A2%E1%B4%9C%E1%B4%80%CA%80%E1%B4%85%20(verse)">verse link</a>
+
+<br /><br />
+<a href="#?w=534" rel="a03" class="poplight" title="the bodyguard">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse four -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">mugshots (bakery cafe)</div></a>
+
+<div class="toggle-content"> 
+Up at 4.00, bed later than he’d like to imagine. He spends most of his days covered in flour and bent over baking racks in the back of the bakery cafe. He doesn’t really have time to date, or have much of a social life outside of running MUGSHOTS and catering, but he can’t help be be a little bit… Sweet… on some of his regulars.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>OPEN</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>SOPHRONIA TEMMINNICK</b> — <a href="https://fine-art-of-finishing-others.tumblr.com">fine-art-of-finishing-others</a><br />
+<br />
+<i>tags</i><br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%CA%99%E1%B4%80%E1%B4%8B%E1%B4%87%CA%80%CA%8F%20(verse)">verse link</a>
+
+
+<br /><br />
+<a href="#?w=534" rel="a04" class="poplight" title="mugshots">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse five -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">braavosi//a song of fire and ice</div></a>
+
+<div class="toggle-content"> 
+Born in 362, in Braavos, he was raised in the household of a keyholder trading family of the Iron Bank. Because of his size and incomparable skill for subtle but effective brutality, the head of the family took notice of him at an early age and funded his tutelage for swordsmanship, and other forms of fighting as his affinity for these arts began to emerge. In exchange, when he came of age, he was contracted to the Iron Bank itself.<br />
+<br />
+He’s traveled extensively on trading vessels, visiting countries and households to remind them their dues, or to collect, when necessary. He has no house, and no crest, and he has no need of either. The Iron Bank, after all, will have its due regardless.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>SELECTIVE</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>ARYA STARK</b> — <a href="https://myricds.tumblr.com">myricds</a><br />
+<br />
+<i>tags</i><br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%CA%99%CA%80%E1%B4%80%E1%B4%80%E1%B4%A0%E1%B4%8Fs%C9%AA%20(verse)">verse link</a>
+
+<br /><br />
+<a href="#?w=534" rel="a05" class="poplight" title="braavosi">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse six -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">jurassic world</div></a>
+
+<div class="toggle-content"> 
+When he left active duty with the Navy SEALs in 2005 after fifteen years of service for a private security gig, the last thing Brock Rumlow expected was to play with dinosaurs all day. Or work with them. But in January 2005 he was contacted by Vic Hoskins with a contract for InGen’s Security Division, and in June of 2005, Jurassic World opened doors. With 98,120 visitors in its first month, there wasn’t a dull moment.<br />
+<br />
+Working in Asset Containment, he’s come into contact with just about everything in the park. And everyone. He likes to take a hands-on approach, so to speak. You’ll usually find him by the lagoon.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>OPEN</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>NAME</b> — relationship<br />
+<br />
+<i>tags</i><br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%E1%B4%8A%E1%B4%9C%CA%80%E1%B4%80ss%C9%AA%E1%B4%84%20%E1%B4%A1%E1%B4%8F%CA%80%CA%9F%E1%B4%85%20(verse)">verse link</a>
+
+<br /><br />
+<a href="#?w=534" rel="a06" class="poplight" title="jurassic world">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse seven -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">pacific rim</div></a>
+
+<div class="toggle-content"> 
+Over 45 as of 2025, Brock is the oldest Jaeger pilot on record for the Americans. He joined the fight early in a MARK 3 Jaeger, HYDRA Coronado. The Jaeger’s nuclear reactor put the pilot at substantial risk for cancer. After a blowout that maximized his risk, he was given an experimental fusion of a serum that would supposedly act as a dual physical enhancement agent, as well as minimize the fallout of his continual exposure to the reactor.<br />
+<br />
+For a while, things were going well until a Category III Kaiju, Meera, diverted from a projected target. Brock, piloting his Jaeger with his wife, moved to intercept. The drop went smoothly & they engaged, taking out the target. It was a clean kill, or so they thought. The creature’s unexpected death throes were powerful enough it penetrated the hull of the Jaeger, killing his wife instantly.<br />
+<br />
+That was 2021. Since then he’s bounced around, working on training other pilots, but generally avoiding stepping into a suit, himself. There’s no point if he’s virtually incompatible with any partner they send his way, right? Might as well make himself useful.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>OPEN</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>JAMES BARNES</b> — supremehydragod<br />
+<br />
+<i>tags</i><br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%E1%B4%98%E1%B4%80%E1%B4%84%C9%AA%D2%93%C9%AA%E1%B4%84%20%CA%80%C9%AA%E1%B4%8D%20(verse)">verse link</a>
+
+<br /><br />
+<a href="#?w=534" rel="a07" class="poplight" title="pacific rim">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse eight -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">hunger games::district 13</div></a>
+
+<div class="toggle-content"> 
+District 13. Occupation: Soldier.<br />
+<br />
+Always a soldier. Brock Rumlow was born in the dark to a family that was little more than a functioning unit within the greater structure of District 13. His mother was one of the teachers in the underground district. He, like his father, became a soldier.<br />
+<br />
+Life is a set of schedules dictated by the temporary tattoo he receives every morning. Mostly it’s busy-work. Meals, training, weapon maintenance, Command, family down time. Any free time he has, he tends to spend helping in the weapons development sector, or volunteering in Medical. Too much down time gives him time to think, and with the things he’s seen, trained for, too much time to think.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>OPEN</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+iii. Bones is infertile after the Pox outbreak that killed Coin’s husband and daughter..<br />
+<br />
+<i>relationships</i>
+<br />
+<b>NAME</b> — relationship<br />
+<br />
+<i>tags</i>b<br />
+<a href="https://readyforyours.tumblr.com/tagged/%E2%9C%95%20%CA%9C%E1%B4%9C%C9%B4%C9%A2%E1%B4%87%CA%80%20%C9%A2%E1%B4%80%E1%B4%8D%E1%B4%87s%20(verse)">verse link</a>
+
+
+<br /><br />
+<a href="#?w=534" rel="a08" class="poplight" title="hunger games">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse nine -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">hogwarts</div></a>
+
+<div class="toggle-content"> 
+<strike>Auror</strike>. Professor at Hogwarts; Defense Against the Dark Arts.<br />
+<br />
+The child of parents working overseas, he got his letter in 1984 and never looked back. His wand is a 15” vine wood with dragon heartstring, his house? Slytherin. He did his N.E.W.T.s in Defense Against the Dark Arts, Potions, Transfiguration, Charms, & Alchemy, achieving the marks necessary to move into Auror training upon his graduation in 1990. He spent 3 years in training & was one of the last Aurors to be taken on.<br />
+<br />
+He retired from his work as an Auror in 2005, electing to take the post of Defense Against the Dark Arts professor at his Alma Mater. Now he works as a professor and the Head of House for Slytherin.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>OPEN</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+iii. Trivia: He was a Beater on the Slytherin Quidditch team.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>NAME</b> — relationship<br />
+<br />
+<i>tags</i>
+link
+
+<br /><br />
+<a href="#?w=534" rel="a09" class="poplight" title="hogwarts">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse ten -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">terra nova</div></a>
+
+<div class="toggle-content"> 
+In the year 2149, the world is dying, overdeveloped, overcrowded and over-polluted. While efforts to reverse the damage to the planet failed, scientists discovered a tear in the fabric of space-time; a portal leading to a prehistoric Earth. Not knowing to what time this portal led, scientists sent a probe through in the hopes of recovering it in the present day. When the probe was never found, the scientists deduced that this portal must lead to a separate time stream, meaning that establishing a human colony would not affect modern day civilization. Ultimately, this doorway leads to an amazing world, a world that allows for a last-ditch effort to save the human race…a second chance to rebuild civilization and get it right this time.<br />
+<br />
+Led by Nathaniel Taylor, the first man to enter the Time Portal, the colonists of Terra Nova are regularly joined by new groups of recruits, known as pilgrimages. Those who are selected to journey to Terra Nova must face numerous challenges, and even deadly obstacles, as they try to rebuild human civilization. Aside from the prehistoric creatures that roam the jungles of the planet, the colonists must also contend with a splinter group known as the Sixers, who have an agenda of their own, and a series of unexplained mysterious glyphs which later reveal to be calculations to allow the travel through the portal to work both ways.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>SELECTIVE</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>NAME</b> — relationship<br />
+<br />
+<i>tags</i><br />
+link
+
+<br /><br />
+<a href="#?w=534" rel="a10" class="poplight" title="terra nova">plot points &amp; threads</a>
+</div></div>
+
+<!-- alternate verse eleven -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">death race</div></a>
+
+<div class="toggle-content"> 
+In 2012, the economy of the US completely collapses, causing unemployment and crime rates to skyrocket, and a sharp increase of convicted criminals, which leads to the rise of privatized prisons.<br /> 
+<br />
+Terminal Island Penitentiary earns its profits from the pay-per-view broadcast of a modern gladiator game called "Death Race," with the prisoners as the participants. What started as Death Match, real gladiator games that pitted violent felons against each other, the games gave way to the more lucrative races.<br />
+<br />
+In "Death Race", the racers, along with their navigators, compete in a 3-part race over 3 days on a closed track on Terminal Island. The track is littered with pressure plates that either activate their car's offensive weapons, defensive equipment or deadly traps. If one racer wins 5 races, in any order, they will be granted immediate & unconditional freedom.<br />
+<br />
+Brock Rumlow is a former Navy Seal who got out for reasons unknown & spends his time fixing up old cars. It’s a largely quiet life, one he’d give his life to protect. One night he comes home a little late, & walks right into a bloodbath. Knocked unconscious, he wakes up holding a bloody knife in time for police to storm his apartment, placing him under arrest.<br />
+<br />
+His wife dead & his kid whisked away to foster care, Brock finds himself at Terminal Island six months later. Handpicked for the Death Match for his build & training, he’s one of the last contesters before the ultimate switch over to the Race.<br />
+<br />
+Nearly winning his first race costs him big, though; an errant missile strike his car, flipping it & causing it to burst into flames. Brock is trapped in the car as his body burns. Brock Rumlow dies in that fiery crash, & what comes out of the ashes, is Crossbones.<br />
+<br />
+rules for the verse & verse-specific notes;<br />
+<br />
+i. This verse is <b>SELECTIVE</b> to new interactions.<br />
+ii. This verse is also multi-ship. All interactions within this verse are entirely separate.<br />
+iii. Brock is a SINGLE DAD in this verse.<br />
+<br />
+<i>relationships</i>
+<br />
+<b>NAME</b> — relationship<br />
+<br />
+<i>tags</i><br />
+link
+
+<br /><br />
+<a href="#?w=534" rel="a11" class="poplight" title="verse six">plot points &amp; threads</a>
+</div></div>
+
+</li>
+
+
+<li>
+<!-- private verse one -->
+<div id="header">verse one</div>
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>verse:</b> v; canon verse one<br />
+<b>verse information:</b> verse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | relationships
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header">verse two</div>
+<div id="wrapverseb"><img src="https://i.imgur.com/PA62SgO.png">
+<b>verse:</b> v; canon verse two<br />
+<b>verse information:</b> verse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | relationships
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<!-- private verse three -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">VERSE THREE</div></a>
+
+<div class="toggle-content"> 
+<b>MAIN VERSE</b>. Follows the canon established in his <b>BIOGRAPHY</b> tab. <b>WHEN INTERACTING WITH <i>SHOW</i>-BASED BLOGS</b>, his rebirth ex sanguis is moved to immediately after 'dying' - he was cleansed of his demonic blood in his final moments instead of being recovered by Lilith.
+<br /><br />
+<a href="#?w=534" rel="p03" class="poplight" title="verse three">plot points &amp; threads</a>
+</div></div>
+
+<!-- private verse four -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">VERSE FOUR</div></a>
+
+<div class="toggle-content"> 
+<b>CANON/ALTERNATE VERSE</b>. Loosely follows the canon backstory established for the <b>SHOW</b>, <i>SHADOWHUNTERS</i> before diverging. After escaping from Edom, Jonathan took the name Sebastian as well as the visage of the Verlac boy, hiding himself away in an apartment in the United States in an attempt to distance himself from Idris & his upbringing under Valentine & Lilith, Sebastian wants no part of the shadow world until a chance encounter with Isabelle Lightwood drags him back in. Fighting his demon blood at every turn, he has to resist his baser impulses if he has any hope of harboring his remaining humanity.
+<br /><br />
+<a href="#?w=534" rel="p04" class="poplight" title="verse four">plot points &amp; threads</a>
+</div></div>
+
+<!-- private verse five -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">VERSE FIVE</div></a>
+
+<div class="toggle-content"> 
+<b>MAIN VERSE</b>. Follows the canon established in his <b>BIOGRAPHY</b> tab. <b>WHEN INTERACTING WITH <i>SHOW</i>-BASED BLOGS</b>, his rebirth ex sanguis is moved to immediately after 'dying' - he was cleansed of his demonic blood in his final moments instead of being recovered by Lilith.
+<br /><br />
+<a href="#?w=534" rel="p05" class="poplight" title="verse five">plot points &amp; threads</a>
+</div></div>
+
+<!-- private verse six -->
+<div class="toggle">
+<a href="#" class="toggle-trigger"><div id="header">VERSE SIX</div></a>
+
+<div class="toggle-content"> 
+<b>CANON/ALTERNATE VERSE</b>. Loosely follows the canon backstory established for the <b>SHOW</b>, <i>SHADOWHUNTERS</i> before diverging. After escaping from Edom, Jonathan took the name Sebastian as well as the visage of the Verlac boy, hiding himself away in an apartment in the United States in an attempt to distance himself from Idris & his upbringing under Valentine & Lilith, Sebastian wants no part of the shadow world until a chance encounter with Isabelle Lightwood drags him back in. Fighting his demon blood at every turn, he has to resist his baser impulses if he has any hope of harboring his remaining humanity.
+<br /><br />
+<a href="#?w=534" rel="p06" class="poplight" title="verse six">plot points &amp; threads</a>
+</div></div>
+</li>
+</div></div> </div>  
+    
+<!-- TAB 6 -->
+    
+<div id="tab6" class="tab">
+<div class="tabcontent">
+<div id="heading"><h1>navigation</h1></div>
+<div class="navihead">
+<p><a href="#one" class="navi4" style="font-size:12px">section one</a> <a href="#two" class="navi4" style="font-size:12px">section two</a> 
+<p><a href="#three" class="navi4" style="font-size:12px">section three</a> <a href="#four" class="navi4" style="font-size:12px">section four</a>
+<p><a href="#five" class="navi4" style="font-size:12px">section five</a>  <a href="#six" class="navi4" style="font-size:12px">section six</a>
+</div>
+<br />
+ <div id="header">section one</div>
+ <ul><li>whatever you want here
+<li>whatever you want here
+<li>whatever you want here
+<li>whatever you want here 
+</ul>
+
+<a name="two"><div id="header">section two</div></a>
+ <ul><li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ </ul>
+
+<a name="three"><div id="header">section three</div></a>
+ <ul><li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ </ul>
+
+<a name="four"><div id="header">section four</div></a>
+ <ul><li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ </ul>
+
+<a name="five"><div id="header">section five</div></a>
+ <ul><li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ </ul>
+
+<a name="six"><div id="header">section six</div></a>
+ <ul><li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here
+ <li>whatever you want here</ul>
+  </div></div>
+    
+<!-- end of tabs -->
+</div> </div>
+   
+<div style="float:left;"><p></p><br><br><div id="pagination">{block:Pagination}{block:PreviousPage}<a href="{PreviousPage}">back</a>{/block:PreviousPage} {block:NextPage}<a href="{NextPage}">/forward</a>{/block:NextPage}{/block:Pagination} </div></div></div>
+
+
+<div id="credit"> 
+<a href="https://houseofsol.tumblr.com" title="theme by houseofsol"><img src="https://68.media.tumblr.com/e5f4ca3f38bdf7a73c37efc9b8fd4996/tumblr_inline_oj2mweKepP1scj6vj_500.png"></a>
+</div>
+
+<!-- tabs/all in one script. do not delete -->
+ 
+<script>
+$(document).ready(function() {
+    $('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = $(this).attr('href');
+ 
+        // Show/Hide Tabs
+        $('.tabs ' + currentAttrValue).fadeIn(600).siblings().hide();
+ 
+        // Change/remove current tab to active
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
+ 
+<script>
+$(document).ready(function() {
+  $('#filterOptions li a').click(function() {
+    // fetch the class of the clicked item
+    var ourClass = $(this).attr('class');
+ 
+    // reset the active class on all the buttons
+    $('#filterOptions li').removeClass('active');
+    // update the active state on our clicked button
+    $(this).parent().addClass('active');
+ 
+    if(ourClass == 'all') {
+      // show all our items
+      $('#ourHolder').children('div.item').show();
+    }
+    else {
+      // hide all elements that don't share ourClass
+      $('#ourHolder').children('div:not(.' + ourClass + ')').hide();
+      // show all elements that do share ourClass
+      $('#ourHolder').children('div.' + ourClass).show();
+    }
+    return false;
+  });
+});
+</script>
+
+<!-- end all in one script coding -->
+
+<!-- Statcounter code for Multimuse
+http://apoxenosi.tumblr.com on Tumblr -->
+<script type="text/javascript">
+var sc_project=11915518; 
+var sc_invisible=1; 
+var sc_security="00e04198"; 
+var sc_https=1; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/11915518/0/00e04198/1/"
+alt="Web Analytics"></a></div></noscript>
+<!-- End of Statcounter Code -->
+ 
+</body>
+
+ <!-- plots & threads popups -->
+
+<div id="a01b" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>Amelia contracted Astriola (demon pox) from another Shadowhunter, & it was not caught before it started to turn her. Brock had to put her down. It was this moment that made him walk away from his duties as a Centurion & a Nephilim. 
+<li>Because of this event, & the additional fact that he broke the Law by marrying in the first place, he was called before the Clave. Given the circumstances of his wife’s death, he was allowed to leave in self-imposed exile rather than face official banishment.
+<li>As a Centurion, he is disallowed from having a Parabatai, getting married, or having children. 
+<li>The Centurions have a medallion or pin that signifies their status; the pin has a pattern of a leafless stick and the words Primi Ordines on it. They also have their family crests on the back of their gear.
+<li>Additionally, his status as a Centurion means he has access to the libraries of the Spiral Labyrinth and the Silent Brothers' archives.
+<li>Brock has a leather rig that is designed to carry two specialized black-steel seraph blades, <b><i>JOYEUSE</i></b> & <b><i>DURENDAL</i></b>. Both blades are highly specialized, forged of black adamas, & bear runic inscriptions down the length of the blades & hilt. They can only be wielded by one Shadowhunters at a time who bears a rune on their hand that matches the rune on the hilt of the blade.
+<li><b><i>JOYEUSE</i></b> is styled after a Greatsword, making it excellent for open combat but the style typically requires two hands to wield.
+<li><b><i>DURENDAL</i></b> resembles more of a short sword or a gladius, & is used more for close combat or combat within limited space.
+<li>In addition to his swords, Brock is also proficient with various staff weapons, to include the Svärdstav, & spears.
+</ul>
+<br />
+<br />
+<div id="header8">brock's runes</div><br />
+Brock's runes are a mixture of common & Centurion specific demarcations designed for strategy and decision making, while ensuring he can deal out rapid heavy damage in battle.<br />
+<ul><li><a href="http://shadowhunters.wikia.com/wiki/Voyance_rune">Voyance rune</a>, most basic rune, was the first he received. Back of right hand.
+<li><a href="https://shadowhunters.wikia.com/wiki/Enkeli">Enkeli</a>, low abdomen, under navel.
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/0/0d/VF_Rune%2C_Acceleration.png/revision/latest/fixed-aspect-ratio-down/width/240/height/240?cb=20160205021032&fill=transparent">Acceleration</a> / <a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/e/ee/VF_Rune%2C_Agility.png/revision/latest/fixed-aspect-ratio-down/width/240/height/240?cb=20160118195944&fill=transparent">Agility</a> / <a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/c/c8/VF_Rune%2C_Heightened_Speed.png/revision/latest/zoom-crop/width/240/height/240?cb=20160118201016">Heightend speed</a> combination, quads (both).
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/1/17/VF_Rune%2C_Breathing_Under_Duress.jpg/revision/latest/zoom-crop/width/240/height/240?cb=20170524100024">Air/Smoke/Water (Breathing under duress)</a> combination, neck
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/1/15/VF_Rune%2C_Courage_in_Combat.png/revision/latest/fixed-aspect-ratio-down/width/240/height/240?cb=20160118200117&fill=transparent">Courage in combat</a> & <a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/e/e1/VF_Rune%2C_Fearless.png/revision/latest/zoom-crop/width/240/height/240?cb=20131030155959">Fearless</a> Centurion-exclusive combination, forearm (left)
+<li>Elemental shield combination (elaborate), back
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/5/57/VF_Rune%2C_Endurance.png/revision/latest/fixed-aspect-ratio-down/width/240/height/240?cb=20160205021036&fill=transparent">Endurance</a>, right forearm
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/2/25/VF_Rune%2C_Fortitude.png/revision/latest/zoom-crop/width/240/height/240?cb=20160118200825">Fortitude</a>, right forearm
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/9/9c/VF_Rune%2C_Iratze_-_Heal.png/revision/latest/zoom-crop/width/240/height/240?cb=20160205031100">Iratze</a>, flank
+<li><a href="http://shadowhunters.wikia.com/wiki/Mnemosyne">Mnemosyne</a>, back of neck
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/f/fb/VF_Rune%2C_Power.png/revision/latest/zoom-crop/width/240/height/240?cb=20160205023821">Power</a>, left thigh (inside)
+<li><a href="https://shadowhunters.wikia.com/wiki/Marriage_runes">Wedded union</a>, back of left hand (permanently scarred, fading)
+<li><a href="https://shadowhunters.wikia.com/wiki/Mourning_runes">Rememberance</a> rune for Amelia, left wrist (small, underneath his wedded union rune)
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/3/37/VF_Rune%2C_Sanger.jpg/revision/latest/zoom-crop/width/240/height/240?cb=20170524100029">Sanger</a>, for sterility. <b><i>PERMANENT RUNE</i></b>.
+<li><a href="https://vignette.wikia.nocookie.net/mortalinstruments/images/2/2c/VF_Rune%2C_Calm_Anger.png/revision/latest/fixed-aspect-ratio-down/width/240/height/240?cb=20160205021034&fill=transparent">Calm anger</a>, left shoulder blade
+<li>A nameless combination rune across his right peck, over his heart, that invokes the phrases <b><i>AVE ATQUE VALE</i></b> (hail & farewell) & <b><i>PULVIS ET UMBRA SUMUS</i></b> (We are dust and shadows) - the traditional words said over the dead. This rune signifies his status as a <b><i>CENTURION</i></b>, acknowledging that he will die alone with no one to say the words over his body.
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="c01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:150px">the verse in full.</li>
+     &nbsp;
+     <li style="width:100px">headcanons</li>
+     &nbsp;
+     <li style="width:100px">relationships</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+
+<p>tbd
+
+</li>
+
+<li>
+<center><h7>verse specific headcanons</h7></center>
+
+<p>- tbd
+
+</li>
+
+<li>
+<center><h7>relationships</h7></center>
+
+<br />
+<br />
+
+<div id="wrapversea"><img src="https://i.imgur.com/KsHeanf.png"> <b>Jace Herondale</b>. ( <a href="https://ofangelicblood.tumblr.com">@ofangelicblood</a>. )
+
+<br>
+<br>
+<br>
+<br>
+
+<div id="wrapversea"><img src="/"> tbd.
+
+
+<br />
+<br />
+
+</div></div></div>
+
+
+<!-- put new toggles here -->
+
+<!-- end toggles -->
+
+</div>
+
+</div>
+
+
+<div id="c02" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul></div>
+
+<div id="c03" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul></div>
+
+<div id="c04" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul></div>
+
+<div id="c05" class="popup_block">
+<div id="header">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="c06" class="popup_block">
+<div id="header">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a01" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a02" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a03" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a04" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a05" class="popup_block">
+<div id="header">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a06" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a07" class="popup_block">
+<div id="header">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a08" class="popup_block">
+<div id="header">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a09" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a10" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>The colony is surrounded by a massive circular fence, featuring outposts with sonic cannons manned by the Security Team to protect the colony from threats. Additionally, sonic mines were set up to help keep the colony sa
+<li>Security cameras are lined around the colony and can manually send sonic booms into their surrounding areas. The colony also has outposts in the jungle that can report suspicious activity.
+</ul>
+<br />
+<br />
+<div id="header">locations</div><br />
+<ul><li><a href="https://terranova.wikia.com/wiki/Terra_Nova_Command_Base">terra nova command base</a>
+<li><a href="https://terranova.wikia.com/wiki/Infirmary">infirmary</a>
+<li><a href="https://terranova.wikia.com/wiki/Research_Laboratory">research laboratory</a>
+<li><a href="https://terranova.wikia.com/wiki/Market">market</a>
+<li><a href="https://terranova.wikia.com/wiki/Boylan%27s_Bar">boylan's bar</a>
+<li><a href="https://terranova.wikia.com/wiki/The_Eye">the eye</a>
+<li><a href="https://terranova.wikia.com/wiki/Mess_Hall">the mess hall</a>
+<li><a href="https://terranova.wikia.com/wiki/Agricultural_Fields">agricultural fields</a>
+<li><a href="https://terranova.wikia.com/wiki/The_Brig">the brig</a>
+<li><a href="https://terranova.wikia.com/wiki/Outpost_3">outpost 3</a>
+<li><a href="https://terranova.wikia.com/wiki/Communications_Relay_Station_19-A">communications relay station 19-a</a>
+<li><a href="https://terranova.wikia.com/wiki/Relay_Station_9">relay station 9</a>
+<li>med outpost
+<li><a href="https://terranova.wikia.com/wiki/Memorial_Field">memorial field</a>
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="a11" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="p01" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="p02" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="p03" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="p04" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="p05" class="popup_block">
+<div id="header">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+<div id="p06" class="popup_block">
+<div id="header8">plot points</div><br />
+<ul><li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+<li>plot point
+</ul>
+<br />
+<br />
+<div id="header8">threads</div><br />
+<ul><li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+<li>thread
+</ul>
+</div>
+
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</html>
