@@ -1,0 +1,47 @@
+#sidebar3 {
+	top:420px;
+   left:889px;
+   width:190px;
+   height:300px;
+   position:fixed;
+   overflow:scroll;
+   overflow-x:hidden;
+	font-family: bitter;
+   font-size:10px;
+	text-transform:lowercase;
+	text-align:center;
+	color: #ccc;
+	line-height:100%;
+   letter-spacing:1px;
+}
+
+
+
+/* this is your pagination coding (how you go from one page to another) */
+
+#pagination {
+    width:150px;
+    height:35px;
+   font-family: 'Alegreya Sans SC', sans-serif;
+	font-size:12px;
+	font-style:bold;
+    text-transform:uppercase;
+    margin-top:690px;
+    margin-left:875px;
+    position:fixed;
+    letter-spacing:1px;
+    text-align:right;
+    color:#ffffff;
+    }
+   
+#pagination a {
+    color:#ffffff;
+        }
+      
+      
+      
+<div style="float:left;"><p></p><br><br><div id="pagination">{block:Pagination}{block:PreviousPage}<a title="previous page" href="{PreviousPage}"><span class="th th-left-arrow"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a title="next page" href="{NextPage}"><span class="th th-right-arrow"></span></a>{/block:NextPage}{/block:Pagination} </div></div></div>      
+        
+/* pagination code ends */
+
+
