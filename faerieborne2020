@@ -752,7 +752,7 @@ div.hr2 hr {
 
 .tabcontent {
     padding:5px;
-    width:448px;
+    width:454px;
     margin-left:400px;
     margin-top:213px;
     margin-bottom:15px;
