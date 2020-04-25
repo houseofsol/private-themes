@@ -904,7 +904,7 @@ div.hr2 hr {
 
 #perminfo {
     font-family:calibri;
-    width:445px;
+    width:440px;
     height:41px;
     margin-left:1px;
     padding-top:13px;
