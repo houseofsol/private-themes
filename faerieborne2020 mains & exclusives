@@ -1,0 +1,266 @@
+<!-- TAB 6 -->
+<div id="tab6" class="tab">
+<div class="tabcontent">
+ <div id="headernav">
+ <h3>portals</h3>
+<ul id="tabs">
+     <li class="active">parabatai</li>&nbsp;
+     <li>in character</li>&nbsp;
+     <li>out of character</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+<div id="header2">parabatai</div>
+
+<div id="header3">exclusives</div>
+<div class="shipimgm">
+<p><a title="exclusive one"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="exclusive two"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="exclusive three"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="exclusive four"><img src="https://i.imgur.com/PA62SgO.png"></a>
+</div>
+<br />
+
+<div id="header3">mains</div>
+<div class="shipimgm">
+<p><a title="main one"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="main two"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="main three"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="main four"><img src="https://i.imgur.com/PA62SgO.png"></a>
+</div>
+<br />
+</li>
+
+<li>
+<div id="header2">in character</div>
+
+<div class="navihead">
+<p><a href="#one" class="navi4" style="font-size:12px">one</a> <a href="#two" class="navi4" style="font-size:12px">two</a> 
+<p><a href="#three" class="navi4" style="font-size:12px">three</a> <a href="#four" class="navi4" style="font-size:12px">four</a>
+<p><a href="#five" class="navi4" style="font-size:12px">five</a>  <a href="#six" class="navi4" style="font-size:12px">six</a>
+<p><a href="#seven" class="navi4" style="font-size:12px">seven</a> <a href="#eight" class="navi4" style="font-size:12px">eight</a>
+</div>
+<br />
+
+<a name="one"><div id="header2">section one</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+
+<a name="two"><div id="header2">section two</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+
+<a name="three"><div id="header2">section three</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+
+<a name="four"><div id="header2">section four</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+
+
+<a name="five"><div id="header2">section five</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+
+<a name="six"><div id="header2">section six</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+ 
+<a name="seven"><div id="header2">section seven</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+ 
+ <a name="eight"><div id="header2">section eight</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+
+ </li>
+
+<li>
+<div id="header2">out of character</div>
+
+<div class="navihead">
+<p><a href="#nine" class="navi4" style="font-size:12px">nine</a> <a href="#ten" class="navi4" style="font-size:12px">ten</a> 
+<p><a href="#eleven" class="navi4" style="font-size:12px">eleven</a> <a href="#twelve" class="navi4" style="font-size:12px">twelve</a>
+<p><a href="#thirteen" class="navi4" style="font-size:12px">thirteen</a>  <a href="#fourteen" class="navi4" style="font-size:12px">fourteen</a>
+</div>
+<br />
+
+<a name="nine"><div id="header2">section one</div></a>
+<br />
+<ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
+<br />
+
+<a name="ten"><div id="header2">section two</div></a>
+<br />
+ <ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+ 
+ </ul>
+ <br />
+
+<a name="eleven"><div id="header2">section three</div></a>
+<br />
+<ul>
+
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+  
+ 
+ </ul>
+ <br />
+
+<a name="twelve"><div id="header2">section four</div></a>
+<br />
+ <ul>
+    
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+
+</ul>
+<br />
+
+
+<a name="thirteen"><div id="header2">section five</div></a>
+<br />
+ <ul>
+ 
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+   
+ </ul>
+ <br />
+
+<a name="fourteen"><div id="header2">section six</div></a>
+<br />
+ <ul>
+
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+ 
+ </ul>
+ 
+ </li>
+
+   </div> </div></div>
