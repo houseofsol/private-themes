@@ -1,0 +1,42 @@
+in the css, under where it says "quotes box coding ends here" you will need to put this:
+
+/* this is for the hover update box */
+
+#hoverbox {
+   position:fixed;
+   top:84px;
+   margin-left:99px;
+   }
+
+#hovercontent {
+   margin-top:10px;
+   width:302px;
+   height:422px;
+   color:#fff;
+   background:#000;
+   opacity:0;
+   text-align:center;
+   padding-bottom:5px;
+   overflow:scroll;
+   overflow-x:hidden;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;
+     }
+     
+#hoverbox:hover #hovercontent {
+   opacity:1;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;}
+   
+/* update box coding ends here */
+
+
+in the actual theme part of the code, literally right above where it says <!-- tabs --> you'll need to put this there:
+
+<div id="hoverbox">
+<div id="hovercontent">
+<p>your hover box content here
+</div>
+</div>
