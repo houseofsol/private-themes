@@ -1,23 +1,48 @@
-<html>
-    <head>
-        <title>{Title}</title>
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        {block:Description}
-            <meta name="description" content="{MetaDescription}" />
-        {/block:Description}
-        
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
 
 <!--
  
-salish v. 3.1 by houseofsol using a tutorial by octomoosey & integrating a base code by neonbike themes
- 
+salish dark ver. 1.3 by houseofsol with a base code by neonbike themes.
+this theme is suited for multimuse blogs with a tabbed page just for the muses. 
 please do not remove this credit and please do not use this theme for commissions or giveaways. 
 thank you.
-
-https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4 -- use this to change the transparency of the backgrounds
  
 -->
+
+
+<!-- dropdown verse scripts -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+        $('.toggle').each(function(){
+                $(this).find('.toggle-content').hide();
+        });
+        $('.toggle a.toggle-trigger').click(function(){
+                var el = $(this), parent = el.closest('.toggle');
+ 
+                if( el.hasClass('active') )
+                {
+                        parent.find('.toggle-content').slideToggle();
+                        el.removeClass('active');
+                }
+                else
+                {
+                        parent.find('.toggle-content').slideToggle();
+                        el.addClass('active');
+                }
+                return false;
+        });
+ 
+});  
+</script>
 
 <!-- popup script -->
 <script type="text/javascript"
@@ -54,6 +79,17 @@ return false;
 <!-- end script -->
 
 
+<!-- important scripts -->
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+
+
+<!-- end other script -->
+
+
 <!-- tabbed script -->
 
 <script>
@@ -74,7 +110,6 @@ $(document).ready(function(){
 </script>
 
 <!-- end tabbed script -->
-
 
 <!-- tabbed popup script -->
 
@@ -97,37 +132,6 @@ $(document).ready(function(){
 
 <!-- end tabbed script -->
 
-<!-- tabbed script -->
-
-    <script>
-
-    $(document).ready(function(){
-    $("ul#mvtabs li").click(function(e){
-        if (!$(this).hasClass("active")) {
-            var tabNum = $(this).index();
-            var nthChild = tabNum+1;
-            $("ul#mvtabs li.active").removeClass("active");
-            $(this).addClass("active");
-            $("ul#mvtab li.active").removeClass("active");
-            $("ul#mvtab li:nth-child("+nthChild+")").addClass("active");
-        }
-    });
-});
-
-    </script>
-
-<!-- end tabbed script -->
-
-
-<!-- important scripts -->
-<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-
-<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
-
-
-<!-- end other script -->
 
 <!-- mytooltips script -->
 
@@ -160,76 +164,101 @@ attribute:"title"
 </script>
 
 <!-- end mytooltips script -->
-        
-        <script src="https://kit.fontawesome.com/2e587cc233.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-        
 
-    
-    
- <!-- colour variables (this is where you change the colours) -->
- 
-   <meta name="color:background" content="#0a0a0a"/>
-	<meta name="color:text" content="#ffffff"/>
-	<meta name="color:links" content="#577399"/>
-	<meta name="color:links hover" content="#778899"/>
-	<meta name="color:permalinks" content="#577399"/>
-	<meta name="color:permalinks hover" content="#778899"/>
-	<meta name="color:bold" content="#556677"/>
-	<meta name="color:italics" content="#fe5f55"/>
-	<meta name="color:blockquote" content="#bdd5ea"/>
-	<meta name="color:pagination" content="#577399"/>
-	<meta name="color:pagination hover" content="#778899"/>
-	<meta name="color:name" content="#ffffff"/>
-	<meta name="color:sidebox" content="#ffffff"/>
-	<meta name="color:popup background" content="#191919"/>
-	<meta name="color:popup text" content="#fdfcfa"/>
-	<meta name="color:popup tabs active" content="#0f0f0f"/>
-	<meta name="color:verse muse tabs" content="#ffffff"/>
-	<meta name="color:verse muse tabs hover" content="0f0f0f"/>
-	<meta name="color:verse muse tabs active" content="#0f0f0f"/>
-	<meta name="color:buttons" content="#d2d2d2"/>
-	<meta name="color:buttons background" content="#141414"/>
-	
-  
 <!-- image variables (this is for the image uploads) -->  
 
-	<meta name="image:sideimg" content="https://i.imgur.com/CNF08Fd.png"/>
-
-    
+	<meta name="image:background" content=""/>
+	<meta name="image:sidebar" content="https://i.imgur.com/VWErWmW.png"/>
+	<meta name="image:info" content="https://i.imgur.com/d6Uk7IV.png"/>
+	<meta name="image:header" content="https://i.imgur.com/1bopTqu.png"/>
+	<meta name="image:smallbg" content="https://i.imgur.com/Anx4sId.png"/>  
+	
+	
 <!-- text variables -- where you will put in the text for certain aspects of your theme -->
 
-<meta name="text:name" content="paris" /> <!-- this is for your url, character's name or a short title -->
-<meta name="text:sidebox" content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. <br /><br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis.<br /><br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis." />
+	<meta name="text:quote box" content="a quote or blog description. use h5 for title boxes" />
+	<meta name="text:hover box" content="information for your top hover box use h5 for title boxes" />
+	<meta name="text:character name" content="hawkeye" /> <!-- this is for your character's first or last name. you cannot use both -->
+	
+	 
+	
+	<meta name="if:Cursor" content="1"> <!-- this is where you'll have the option of turning the small cursor on or off -->
+	<meta name="if:show grayscale" content="0"/> <!-- this is where you'll have the option of turning the colour on hover on or off -->
+	<meta name="if:show hover box" content="0"/> <!-- this is where you'll have the option of turning the hover update box on or off -->
+
+ 
+<!-- colour variables (this is where you change the colours) -->
+ 
+   <meta name="color:Background" content="#000000"/>
+	<meta name="color:Text" content="#cccccc"/>
+	<meta name="color:asktext" content="#cccccc"/>
+	<meta name="color:Link" content="#54739f"/>
+	<meta name="color:infolink" content="#54739f"/>
+	<meta name="color:infolink hover" content="#88a7d7"/>
+	<meta name="color:Link Hover" content="#88a7d7"/>
+	<meta name="color:Bold" content="#7363a2"/>
+	<meta name="color:Italics" content="#8b839b"/>
+	<meta name="color:blockquote" content="#4a3d77"/>
+	<meta name="color:tabs active" content="#8e7280"/>
+	<meta name="color:tabs hover" content="#88a7d7"/>
+	<meta name="color:hover background" content="#000000"/>
+	<meta name="color:tooltip" content="#b1b0d0"/>
+	<meta name="color:character" content="#4a3d77"/>
+	
+
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	
+
+ <!-- this is where you can choose what google fonts you want to use -->
+<link href='https://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" type='text/css'>  
+<link href="https://fonts.googleapis.com/css?family=La+Belle+Aurore" rel="stylesheet" type='text/css'> 
+<link href="https://fonts.googleapis.com/css?family=Rasa&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Arima+Madurai&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Marck+Script&display=swap" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet" type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Mr+Dafoe&display=swap" rel="stylesheet" type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet" type='text/css'> 
 
 
-<!-- this is where you can choose what google fonts you want to use -->
+<style type="text/css"> /* this gives the theme its look */
 
-<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'> 
-
+iframe#ask_form { 
+		width: 485px;
+      min-height: 220px; 
+      }
+      
+iframe#submit_form { 
+		width: 485px;
+      min-height: 220px; 
+      }
     
-<style type="text/css">
 
-@font-face {
-	font-family:'onelove';
-	src:url('https://static.tumblr.com/uopakca/76dq4ct45/onelove.otf');
-	}
+/* this is more code for the cursor */
 
+{block:IfCursor}*, body, a, a:hover {
+cursor: url(https://cur.cursors-4u.net/others/oth-6/oth589.cur), auto;
+}
+{block:IfCursor}
 
-/* tabbed popup styling */
+/* this is for the tabbed popup box */
 
 ul#poptabs {
    list-style-type: none;
    padding: 0;
    text-align: center;
-   margin-left:0px;
 }
 
 ul#poptabs li {
    display: inline-block;
    background-color: transparent;
-   border: solid 1px #63646a;
-   padding: 5px 6px;
+   background-image:url('{image:smallbg}');
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
    margin-bottom: 4px;
    color: #b1b1b1;
    cursor: pointer;
@@ -237,17 +266,19 @@ ul#poptabs li {
 
 ul#poptabs li:hover {
    background-color: transparent;
+   background-image:url('{image:smallbg}');
 }
 
 ul#poptabs li.active {
-   background-color: {color:popup tabs active};
+   background-color: transparent;
+   background-image:url('{image:smallbg}');
 }
 
 ul#poptab {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-}
+   list-style-type: square;
+   margin: 5px;
+   padding: 5px;
+   }
 
 ul#poptab li {
    display: none;
@@ -256,6 +287,77 @@ ul#poptab li {
 ul#poptab li.active {
    display: block;
 }
+
+/* tabbed popup box coding ends here */
+
+
+/* this is for the quotes box */
+
+#quotes{
+		position:fixed;
+      top:70px;
+      left:883px;
+      width:146px;
+      height:415px;
+      background-color:transparent;
+      font-size:11px;
+		text-transform:lowercase;
+		text-align:center;
+		color: #bebebe;
+		overflow:auto;
+		padding:0px;
+      overflow-x:hidden;
+      line-height:20px;
+
+}
+
+#quotes a{
+	text-decoration:none;
+}
+
+#quotes a:hover {
+    text-decoration:none;
+}
+
+#quotes p{
+		padding-top:-10px;
+		padding-bottom:3px;
+	}
+	
+
+/* quotes box coding ends here */
+
+/* this is for the hover update box */
+
+#hoverbox {
+   position:fixed;
+   top:58px;
+   margin-left:734px;
+   }
+
+#hovercontent {
+   margin-top:10px;
+   width:148px;
+   height:452px;
+   color:#fff;
+   background:{color:hover background};
+   opacity:0;
+   text-align:center;
+   padding-bottom:5px;
+   overflow:scroll;
+   overflow-x:hidden;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;
+     }
+     
+#hoverbox:hover #hovercontent {
+   opacity:1;
+   -webkit-transition: all 0.7s ease;
+   -moz-transition: all 0.7s ease;
+   -o-transition: all 0.7s ease;}
+   
+/* update box coding ends here */
 
 
 /* this is for the tumblr controls */
@@ -279,452 +381,652 @@ filter:alpha(opacity=80);
 }
 
 
+/* this is what changes the colour when you highlight */
+
+::selection {
+background: #963c3e;
+color: #c7cccb;
+}
+
+
 /* this changes the tooltip when you hover over a link */
 
 #s-m-t-tooltip {
 max-width:400px;
 padding:5px;
 margin:10px 0px 0px 10px;
-background-color:#373737; 
-font-family:'gibson', sans-serif;
-font-size:9px;
+background-color:#112233; 
+background-image:url('{image:smallbg}');
+font-family:trebuchet ms;
+font-size:8px;
 letter-spacing:1px;
 font-style:none;
 text-transform:uppercase;
 padding-bottom:3px;
 color:#fff;
-border: 4px double #d7d7d7;
+border: 4px double #6a6a6a;
 z-index:999999999999999999999999999999999999;
 }
 
 
+/* this is the scrollbar code */
+ 
+::-webkit-scrollbar-thumb:vertical {background-color:transparent;height:0px;}
+::-webkit-scrollbar-thumb:horizontal {background-color:transparent;height:0px;}
+::-webkit-scrollbar {background-color:{color:transparent};height:0px;width:0px;}
 
 
-/* scrollbars code */
-
-::-webkit-scrollbar-thumb:vertical {
-	background-color:transparent;
-	height:0px;
-	}
-
-::-webkit-scrollbar-thumb:horizontal {
-	background-color:transparent;
-	height:0px;
-	}
-
-::-webkit-scrollbar {
-	background-color:transparent;
-	height:0px;
-	width:0px;
-	}
-
-/* headings */
+/* this is all your heading codes */
 
 h1 {
-	font-size:25px;
-	text-align:right;
-	margin-top:0px;
+font-size:17px;
+line-height:15px;
+font-family:bitter;
+text-transform:uppercase;
+text-align:center;
+font-style:italic;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
 }
-
+ 
 h2 {
-	font-size:25px;
-	text-align:right;
-	margin-top:-10px;
+font-size:17px;
+font-family:bitter;
+text-align:center;
+line-height:100%;
+letter-spacing:-0.5px;
+color:{color:text};
+font-weight:bold;
+text-transform:uppercase;
+padding:5px;
+padding-bottom:2px;
 }
 
 h3 {
-	font-size:13px;
-	line-height:15px;
-	text-transform:lowercase;
-	text-align:center;
-	font-weight:normal;
-	letter-spacing:0px;
-	color:#fff;
-	background-color: transparent;
-	border-top: solid 1px #63646a;
-	border-bottom: dashed 1px #63646a;
-	width:225px;
-	display: inline-block;
-	padding: 5px 15px;
-	margin-bottom: 1px;
-	margin-left:0px;
-	margin-top:0px;
+font-size:40px;
+text-align:center;
+line-height:2px;
+font-family: 'Cedarville Cursive', cursive;
+letter-spacing:-0.5px;
+color:#fff;
+font-weight:normal;
+font-style:italic;
+text-align:center;
+text-transform:lowercase;
+padding-top:2px;
+margin-top:15px;
 }
 
 h4 {
-	color:#fff;
-	font-family: 'onelove', sans-serif;
-   font-size:70px;
-	text-transform:lowercase;
-	font-weight:normal;
-	text-align:center;
-	margin-top:-10px;
-	margin-bottom:-15px;
+font-size:40px;
+line-height:15px;
+font-family: 'Cedarville Cursive', cursive;
+text-transform:lowercase;
+text-align:center;
+font-style:italic;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+margin-top:15px;
+margin-bottom:2px;
+}
+
+h5 {
+font-size:13px;
+line-height:15px;
+font-family:bitter;
+text-transform:uppercase;
+text-align:center;
+font-weight:normal;
+letter-spacing:0px;
+color:{color:text};
+background-color: transparent;
+border: solid 1px #63646a;
+width:135px;
+display: inline-block;
+padding: 5px 15px;
+margin-bottom: 3px;
+margin-left:3px;
+margin-top:3px;
+}
+
+h6 {
+font-size:13px;
+font-family:bitter;
+text-align:center;
+line-height:100%;
+letter-spacing:-0.5px;
+color:{color:text};
+font-weight:bold;
+text-transform:uppercase;
+padding-top:7px;
+background-image: url('{image:header}');
+background-repeat: no-repeat;
+margin-left:15px;
+width:200px;
+height:26px;
 }
 
 ul{
     list-style-type:square;
 }
+ 
+ol{
+    list-style-type:;
+}
 
-/* general style */
+/* heading code ends */
+
+ 
+/* general code for the look of your theme */
 
 body {
-	background-color: {color:background};
-	font-family:'gibson', sans-serif;
-	font-size:12px;
-	color:{color:text};
-	background-position:top left;
-	background-repeat:no-repeat;
+    background-color:{color:background};
+    background-image: url('https://static.tumblr.com/ahsqnir/OT7q1pypz/base.png'), url('{image:background}');
+	background-repeat:no-repeat, repeat;
 	background-attachment:fixed;
-}
-
-a {
-	text-decoration:none;
-	color:{color:links};
-	-webkit-transition: all 0.7s ease;
-	-moz-transition: all 0.7s ease;
-	-o-transition: all 0.7s ease;
-}
-
-a:hover {
-	color:{color:links hover};
-}
-
-
-b,strong {
-	color:{color:bold};
-	text-transform:uppercase;
-	font-size:15px;
-}
-
-b2 {
-	color:{color:bold};
-	text-transform:uppercase;
-	font-weight:bold;
-	font-size:12px;
-}
-
-i,em {
-	color:{color:italics};
-	font-family: 'Covered By Your Grace', cursive;
-	font-size:19px;
-	line-height:90%;
+	background-position:73px 0px; 
+    margin:0px;
+    color:{color:text};
+    font-family:bitter;
+    font-size:12px;
+    text-transform:lowercase;
+    line-height:20px;
+    cursor: pointer;
 }
 
 sup, small, sub { 
   font-size:12px;
   }
-
-blockquote {
-	border-left:1px dashed {color:blockquote};
-	padding-left:10px;
-   padding-right:5px;
-	margin:5px 5px 5px 10px;
-   line-height:auto;
+  
+b, strong {
+	color:{color:bold};
+	font-size:15px;
+	text-transform:uppercase;
+	font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-blockquote img {
-	max-width:100%;
-	height:auto;
+big {
+	color:{color:bold};
+	}
+	
+
+i, em {
+	color:{color:italics};
+	font-size:25px;
+	text-transform:lowercase;
+	font-family: 'Covered By Your Grace', cursive;
+}
+ 
+a {
+	text-decoration:none;
+   outline:none;
+   -moz-outline-style:none;
+   color:{color:link};
+   -moz-transition-duration:0.5s;
+   -webkit-transition-duration:0.5s;
+   -o-transition-duration:0.5s;
+   cursor: pointer;
+}
+ 
+a:hover {
+    text-decoration:none;
+    outline:none;
+    -moz-outline-style:none;
+    color:{color:link hover};
+    cursor: pointer;
 }
 
+a.asker {
+   font-size:25px;
+	font-family: 'Special Elite', cursive;
+ 	text-transform:lowercase;
+ 	padding-top:5px;
+}
+ 
 p{
     margin-bottom:10px;
 }
-
+ 
 img {
-	border:none;	
-	max-width:100%;
-	height:auto;
+    border:none;
+    max-width:100%;
+    height:auto;
 }
 
-.caption img {
+.photoset {
+{block:ifshowgrayscale}
+-webkit-filter: grayscale(100%);
+z-index: -9999999999999999999999999px;
+-webkit-transition: all 0.9s ease-in-out;
+-moz-transition: all 0.9s ease-in-out;
+-o-transition: all 0.9s ease-in-out;
+-ms-transition: all 0.9s ease-in-out;
+transition: all 0.9s ease-in-out;
+{/block:ifshowgrayscale}
+max-width: 100%;
+}
+
+{block:ifshowgrayscale}
+img:hover,.photoset:hover {
+-webkit-filter: grayscale(0%);
+z-index: -9999999999999999999999999px;
+-webkit-transition: all 0.9s ease-in-out;
+-moz-transition: all 0.9s ease-in-out;
+-o-transition: all 0.9s ease-in-out;
+-ms-transition: all 0.9s ease-in-out;
+transition: all 0.9s ease-in-out;
+}
+{/block:ifshowgrayscale}
+
+blockquote {
+	border-left:1px dashed {color:blockquote};
+   padding-left:10px;
+    padding-right:5px;
+    margin:5px 5px 5px 10px;
+    line-height:auto;
+	}  
+	
+
+blockquote img {
    max-width:100%;
    height:auto;
    }
+
+
+.caption img {
+   max-width:100%;
+   height:auto;}
  
 .posts img {
    max-width:100%;
-   }
+   margin-top:5px;
+   margin-bottom:5px;}
+   
+#wrapping img {
+	float:left;
+	padding-right:5px;
+	padding-top:5px;
+	} 
+	
+#wrapverse img {
+	float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:65px;
+	height:100px;
+	border:1px solid #a8a8a8;
+	} 
+	
+#wrapverseb img {
+	float:right;
+	margin-right:1px;
+	margin-left:8px;
+	width:65px;
+	height:100px;
+	border:1px solid #a8a8a8;
+	} 	
+	
+.video {
+   width:287px!important;}
 
-.photoset {
-	max-width:100%;
+.video iframe {
+   width:287px!important;}
+   
+  span {
+      cursor: pointer;
+  }
+  
+   
+ div.hr2 {
+ margin-top:5px;
+ height: 5px;
+ margin-left:5px;
+ border-top: 1px dashed #8c8b8b;
+ border-bottom: 1px dashed #8c8b8b;
+ background:transparent;}
+
+div.hr2 hr {
+ display: none;} 
+    
+/* general coding ends here */
+
+/* this is your sidebar */
+
+#sidebar {
+	position:fixed;
+	width:150px;
+   height:454px;
 }
 
+#sidebar img {
+	width:148px;
+   height:452px;
+   margin-left:734px;
+   margin-top:68px;
+   padding-bottom:0px;
+}
 
+#sidebar2 {
+	position:fixed;
+	width:300px;
+   height:35px;
+   margin-left:255px;
+   margin-top:77px;
+   color:{color:text};
+   font-family:bitter;
+   font-size:14px;
+   text-transform:uppercase;
+   line-height:20px;
+   letter-spacing:5px;
+}
+
+#sidebar3 {
+	position:fixed;
+	width:350px;
+	color:{color:character};
+	font-family: 'Mr Dafoe', cursive;
+   font-size:80px;
+	text-transform:lowercase;
+	text-align:left;
+	padding:2px;
+	margin-left:882px;
+	margin-top:248px;
+	-moz-transform: rotate(90deg); 
+   -webkit-transform: rotate(90deg);
+   -o-transform: rotate(90deg);
+}
+/* sidebar ends here */	
+	
+	
 /* tabbed content coding */
 
 .tabcontent {
-	 position:absolute;    
-    width:510px;
-    margin-left:10px;
-    margin-top:0px;
+    padding:10px;
+    width:495px;
+    margin-left:180px;
+    margin-top:55px;
+    margin-bottom:15px;
+    position:fixed;
     overflow:scroll;
     overflow-x:hidden;
-    height:600px;
+    height:488px;
     text-transform:lowercase;
-    background:transparent;
-	 padding-bottom:10px;
-    }
+    font-size:12px;
+    line-height:20px;
+    cursor: pointer;
+    
+}
 
 /* tabbed content coding ends here */	
  
 
+/* this is the container coding */
 
-/*post style */
-
-#container {			/*this will contain the posts so they aren't left justified*/
-	position:absolute;
-	left:100px;
-	height:600px;
-	overflow-y:scroll;
-	overflow-x:hidden;
-	width:530px;
-	top:100px;
-	background:#232323e6; /* only change the first six numbers. the last two are the transparency */
-	padding-bottom:10px;
-	border-top:1px dashed #a0a0a0;
-	border-left:1px dashed #a0a0a0;
-	border-bottom:1px solid #a0a0a0;
-	border-right:1px solid #a0a0a0;
+#post {
+    width:475px;
+    padding-bottom:15px;
+    margin-top:3px;
 }
 
-.posts {
-	width:500px;
-	background-color:#6e6e6e40; /* only change the first six numbers. the last two are the transparency */
-	padding:5px;
-	margin-bottom:30px;
+#entries {
+    padding:10px;
+    width:490px;
+    margin-left:180px;
+    margin-top:55px;
+    margin-bottom:15px;
+    position:fixed;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:488px;
+    text-transform:lowercase;
+    font-size:12px;
+    line-height:20px;
 }
+   
+/* container coding ends */
 
-.postswrap {
-	padding:10px;
-	width:560px;
-}
 
-.permalinks {
-	padding:5px;
-	background-color:#282828bf; /* only change the first six numbers. the last two are the transparency */
-	height:12px;
-	border-top:1px solid #5a5a5a;
-	border-bottom:1px dashed #5a5a5a;
-	margin-top:15px;
-}
 
-.permalinks a {
-	text-decoration:none;
-	font-size:9px;
-	color:{color:permalinks};
-}
-
-.permalinks a:hover {
-	color:{color:permalinks hover};
-}
-
-.date {
-	float:left;
-}
-
-.date .fa-bookmark { 
-	color:#aaaaaa; 
-	} 
-
-.reblogs {
-	float:right;
-}
-
-.pinned { 
-	font-weight:bold; 
-   font-size:10px;
-   text-align:center;
-   width:400px;
-}
-
-.pinned a { 
-	text-transform:uppercase!important; 
-	}
-.pinned .fa-thumbtack { 
-	margin-right:7px; 
-	font-size:11px; 
-	} 
-	
-
-/* tag styling */
-
-.tags {
-	text-align:center;
-	margin-top:5px;
-}
-
-.tags a {
-	text-decoration:none;
-	font-size:9px;
-	text-transform:uppercase;
-	color:{color:tags};
-}
-
-.tags a:hover {
-	color:{color:tags hover};
-}
-
-/*sidebar styling */
-
-#name {
-	width:200px;
-	color:{color:name};
-	font-family: 'onelove', sans-serif;
-   font-size:80px;
-	text-transform:lowercase;
-	text-align:right;
-	margin-bottom:-15px;
-}
-
-#sidebar {
-	position:fixed;
-	left:700px;
-	top:100px;
-	height:400px;
-	width:350px;
-	background:{color:background};
-	background-position:top left;
-	background-repeat:no-repeat;
-	background-attachment:fixed;
-	opacity:0.2;
-	-webkit-transition: all 0.7s ease;
-	-moz-transition: all 0.7s ease;
-	-o-transition: all 0.7s ease;
-}
-
-#sidebar:hover {
-	opacity:1;
-}
-
-#sideimg img {
-	width:130px;
-   height:300px;
-   margin-left:754px;
-   margin-top:0px;
-   padding-bottom:0px;
-	float:right;
-	url('{image:sideimg}');
-}
-
-#sidebox {
-	font-size:10px;
-	color:{color:sidebox};
-	text-align:justify;
-	padding:0 8px;
-	height:280px;
-	width:120px;
-	overflow-y:scroll;
-	overflow-x:hidden;
-	margin-bottom:5px;
-	margin-top:2px;
-	margin-left:-7px;
-	display:inline;
-	float:left;
-}
-
-/* links styling */
+/* this is your links coding */
 
 #links {
-	font-size:12px;
-	padding:5px;
-	text-align:right;
-	margin-right:900px;
-	margin-top:-25px;
-	width:100px;
-}
-
-#links a {
-	display:inline-block;
-	color:{color:links};
-	padding-left:10px;
-	-webkit-transition: all 0.7s ease;
-	-moz-transition: all 0.7s ease;
-	-o-transition: all 0.7s ease;
-}
-
+    position:fixed;
+    font-family:bitter;
+    width:300px;
+    margin-top:513px;
+    margin-left:640px;
+    text-transform:uppercase;
+    font-size:15px;
+    text-align:right;
+    line-height:190%;
+    }
+   
+#links a{
+    line-height:190%;
+    padding:1px;
+    margin-top:1px;
+    margin-left:3px;
+    text-decoration:none;
+    color:#929091;
+    -moz-transition-duration:.7s;
+    -webkit-transition-duration:.7s;
+    -o-transition-duration:.7s;
+    }
+   
 #links a:hover {
-	color:{color:links hover};
-	letter-spacing:1px;
-}
+    color:{color:link hover};
+   -moz-transition-duration:.4s;
+   -webkit-transition-duration:.4s;
+   -o-transition-duration:.4s;
+     
+    }
 
+/* links coding ends */
+    
 
-/*pagination styling */
+ 
+/* this is your pagination coding (how you go from one page to another) */
 
 #pagination {
-	position:fixed;
-	top:475px;
-	left:330px;
-	text-transform:uppercase;
-}
-
-#pagination a {
-	color:{color:pagination};
+    width:150px;
+   height:35px;
+    font-family:'bitter';
 	font-size:12px;
-	-webkit-transition: all 0.7s ease;
-	-moz-transition: all 0.7s ease;
-	-o-transition: all 0.7s ease;
+	font-style:bold;
+    text-transform:uppercase;
+    margin-top:425px;
+    margin-left:880px;
+    letter-spacing:1px;
+    text-align:center;
+    }
+   
+#pagination a {
+    color:#b2b2b2;
+        }
+        
+/* pagination code ends */
+    
+
+/* this is your post information coding */
+
+#info {
+    font-family:calibri;
+    width:501px;
+    height:41px;
+    margin-left:-3px;
+    padding-top:10px;
+    word-spacing:1px;
+    font-size:12px;
+    color:{color:infotext};
+    text-transform:lowercase;
+    font-style:normal;
+    text-align:center;
+    background-image: url('{image:info}');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#info a {
+    margin-right:5px;
+    color:{color:infolink};
+    font-style:normal;
+    cursor: pointer;
+    }
+   
+#info a:hover {
+    color:{color:infolink hover};
+    cursor: pointer;
+    }
+    
+/* post info coding ends here */
+
+/* this is your permalink post information coding */
+
+{block:PermalinkPage}
+
+#perminfo {
+    font-family:calibri;
+    width:501px;
+    height:41px;
+    margin-left:-3px;
+    padding-top:14px;
+    word-spacing:1px;
+    font-size:12px;
+    color:{color:infotext};
+    text-transform:lowercase;
+    font-style:normal;
+    text-align:center;
+    background-image: url('{image:info}');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#perminfo a {
+    margin-right:5px;
+    color:{color:infolink};
+    font-style:normal;
+    cursor: pointer;
+    }
+   
+#perminfo a:hover {
+    color:{color:infolink hover};
+    cursor: pointer;
+    }
+    
+{/block:PermalinkPage}
+    
+/* post info coding ends here */
+    
+    
+/* this is the code for your tags */
+
+.tags {
+    font-family:calibri;
+    width:470px;
+    text-transform:normal;
+    line-height:120%;
+    font-size:11px;
+    text-align:left;
+    padding-top:1px;
+    padding-bottom:15px;
+    cursor: pointer;
+    -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    }
+.tags a{
+        font-style:italic;
+        color:{color:link};
+        text-transform:lowercase;
+        cursor: pointer;
+     -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    } 
+.tags a:hover{
+        color:{color:link hover};
+        cursor: pointer;
+         -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+   }  
+   
+/* tags coding ends here */
+
+/* this is the code for your permalink page tags */
+
+{block:PermalinkPage}
+
+.permtags {
+    font-family:calibri;
+    width:470px;
+    text-transform:normal;
+    line-height:120%;
+    font-size:11px;
+    text-align:left;
+    padding-top:1px;
+    padding-bottom:15px;
+    cursor: pointer;
+    -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    }
+.permtags a{
+        font-style:italic;
+        color:{color:link};
+        text-transform:lowercase;
+        cursor: pointer;
+     -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+    } 
+.permtags a:hover{
+        color:{color:link hover};
+        cursor: pointer;
+         -moz-transition-duration:0.2s;
+    -webkit-transition-duration:0.2s;
+    -o-transition-duration:0.2s;
+   }  
+   
+{/block:PermalinkPage}
+   
+/* tags coding ends here */
+
+   
+/* this is the code for your asks/answers */
+
+#ask {
+    padding:5px;
+    padding-bottom:10px;
+    padding-left:10px;
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:bold;
+    color:{color:asktext};
+    line-height:140%;
+    border-bottom:1px dashed #6a6f7a;
 }
 
-#pagination a:hover{
-	color:{color:pagination hover};
+#ask img {
+    float:right;
+}
+#ans {
+    text-align:left;
+    padding:5px;
+    color:{color:text};
+    text-transform:lowercase;
 }
 
-/* asks styling */
-
-.asker {
-   font-size:15px;
-   font-style: italic;
-   text-align:right;
-   margin-bottom:5px;
-   padding-bottom:3px;
-}
-
-.question {
-   font-style: italic;
-   padding-left:10px;
-   padding-right:50px;
-   padding-top:10px;
-   padding-bottom:10px;
-   border-left:1px dashed #000;
-   background-color:#282828bf; /* only change the first six numbers. the last two are the transparency */
-}
-
-
-iframe#ask_form { 
-		width: 485px;
-      min-height: 220px; 
-      }
-      
-iframe#submit_form { 
-		width: 485px;
-      min-height: 220px; 
-      }
-      
-
-/* quotes stlying */
-
-.quote {
-   font-size:13px;
-   letter-spacing:1px;
-   text-align:center;
-   border-left:1px dashed #000;
-   margin-bottom:5px;
-   padding-left:10px;
-   padding-right:50px;
-   padding-top:10px;
-   padding-bottom:10px;
-   background-color:#282828bf; /* only change the first six numbers. the last two are the transparency */
-}
-
-.quotesource {
-   font-size:10px;
-   letter-spacing:1px;
-   text-align:center;
-   margin-bottom:5px;
-}
-
+/* asks/answers code ends */
+    
 
 /* tumblr audio code */
     
@@ -820,45 +1122,282 @@ iframe#submit_form {
     
 /* tumblr audio code ends here */
 
-/* IMESSAGE CHAT POST */
-.answer span,.convo li{margin:0 0 5px;border-radius:1em;padding:.5em 10px;max-width:75%;clear:both;position:relative}.answer .them,.user_1,.user_3,.user_5,.user_7,.user_9,.user_11{float:left;background:#e5e5ea;color:#000;left:3px}.me::after,.user_1::after,.user_3::after,.user_5::after,.user_7::after,.user_9::after,.user_11::after{content:"";position:absolute;left:-.5em;bottom:0;width:.5em;height:1em;border-right:.5em solid #e5e5ea;border-bottom-right-radius:1em .5em}.answer .me,.user_2,.user_4,.user_6,.user_8,.user_10,.user_12{right:3px;float:right;background-color:#e8f3f9;color:#000}.them::after,.user_2::after,.user_4::after,.user_6::after,.user_8::after,.user_10::after,.user_12::after{content:"";position:absolute;right:-.5em;bottom:0;width:.5em;height:1em;border-left:.5em solid #e8f3f9;border-bottom-left-radius:1em .5em}.me p,.answer,.asked span{padding:0;margin:0}.answer{overflow:hidden}
-        .asked p {
-            text-align: left;
-            margin: 0 0px 10px 0px;
-            padding: 0;
-            color: #666666;
-            font-family: 'Inconsolata', Inconsolata;
-            font-size: 12px;
-            line-height: 0px;
+/* header coding */
+
+#header{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:400px;
+    height:25px;
+    margin-top:15px;
+    margin-left:40px;
+    font-size:13px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:{color:text};
+	 font-weight:bold;
+	 text-transform:uppercase;
+	 padding:7px;
+     cursor: pointer;
+
+}
+
+#headerp{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:250px;
+    height:35px;
+    margin-top:1px;
+    margin-left:5px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding-top:8px;
+     cursor: pointer;
+
+}
+
+#header2{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:325px;
+    height:25px;
+    margin-top:15px;
+    margin-left:75px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+
+}
+
+#header2p{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:240px;
+    height:25px;
+    margin-top:15px;
+    margin-left:10px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding-top:8px;
+     cursor: pointer;
+
+}
+
+#header3{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:300px;
+    height:25px;
+    margin-top:15px;
+    margin-left:87px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding:8px;
+     cursor: pointer;
+
+}
+
+#header3p{
+    background-image:url('{image:header}');
+    background-repeat:no-repeat;
+    font-family:calibri;
+    width:230px;
+    height:35px;
+    margin-top:1px;
+    margin-left:3px;
+    font-size:11px;
+	 font-family:bitter;
+	 text-align:center;
+	 line-height:100%;
+	 letter-spacing:-0.5px;
+	 color:#fff;
+	 font-weight:normal;
+	 text-transform:uppercase;
+	 padding-top:8px;
+     cursor: pointer;
+
+}
+
+/* header coding ends here */
+
+/* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+}
+
+ul#tabs li {
+   display: inline-block;
+   background-color: transparent;
+   background-image:url('{image:smallbg}');
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   color: #b1b1b1;
+   cursor: pointer;
+}
+ 
+ul#tabs li:hover {
+   background-color: transparent;
+   background-image:url('{image:smallbg}');
+}
+
+ul#tabs li.active {
+   background-color: transparent;
+   background-image:url('{image:tabsbkg}');
+}
+ 
+ul#tab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul#tab li {
+   display: none;
+}
+
+ul#tab li.active {
+   display: block;
+} 
+ 
+/* tabbed page code ends */
+
+
+/* tab styling -- best not to touch this unless you know what you're doing */
+
+.tabs {
+ 
+    width:100%;
+    margin-left:0px;
+    display:inline-block;
+   
+    
+}
+
+/* end of tab styling */
+
+/* tab links coding */
+
+   /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+        
+                
+    }
+ 
+    .tab-links li {
+        margin-right:1px;
+        display:inline-block;
+        list-style:none;
+        text-transform:uppercase;
+    }
+ 
+        .tab-links a {
+            padding:7px;
+            display:inline-block;
+            color:{color:links};
+            transition:all linear 0.15s;
+            border-bottom:1px solid transparent;
+            font-size:15px;
         }
-        .footerright .viasrc {
-            float: left;
+
+/* end of tab links coding */
+
+/* tab links hover stylilng */
+
+     .tab-links a:hover {
+            text-decoration:none;
+            color:{color:link hover};
         }
-        .asked a {
-            margin:0;padding:0;
+ 
+    li.active a, li.active a:hover {
+        background:transparent;
+        background:{color:links};
+        font-size:15px;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -o-transition: all .3s;
+        -ms-transition: all .3s;    
+        transition: all .3s;
+    }
+
+/* end of tab links hover styling */
+
+/* tab content -- best not to touch this either */
+
+  .tab-content {
+    }
+ 
+        .tab {
+            display:none;
         }
-.user_4{background-color:#55caff;color:#fff}.user_4::after{border-color:#55caff}.user_6{background-color:#60f246;color:#fff}.user_6::after{border-color:#60f246}.user_5{background-color:#9ff3fc;color:#000}.user_5::after{border-color:#9ff3fc}.user_3{background-color:#25c413;color:#fff}.user_3::after{border-color:#25c413}.user_7{background-color:#9b9b9b;color:#fff}.user_7::after{border-color:#9b9b9b}.user_8{background-color:#0d9321;color:#fff}.user_8::after{border-color:#0d9321}.user_9{background-color:#606060;color:#fff}.user_9::after{border-color:#606060}
-        .convo {
-            overflow: hidden;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+ 
+        .tab.active {
+            display:block;
         }
+
+/* end of tab content coding */
 
 /* popup styling */
 
 .popup_block{
     display:none;
-    background:{color:popup background};
-    color:{color:popup text}; /* font colour for the popup */
+    background:#000000;
+    color:#6a6a6a;
     padding:20px;
     border:0px solid #a2a2a2;  /* if you want a solid white pop-up, delete this */
     float:left;
     position:fixed;
-    top:426px;
-    left:736px;
-    width:490px; 
-	 height:570px; 
+    top:333px;
+    left:902px;
+    width:300px; 
+	 height:491px; 
 	 overflow-y:scroll; 
 	 overflow-x:hidden;
     z-index: 99999;
@@ -883,242 +1422,99 @@ iframe#submit_form {
 
 /* end of styling */
 
+/*navigation page styling */
 
+.navi {
+    color:#eee;
+    display:inline-block;
+    background-color:#transparent;
+    border: dotted 1px #63646a;
+    width:77px;
+    text-align:center;    
+    padding:3px;
+    text-transform:lowercase; 
+}
 
-/* tabbed page code */
-
-#headernav {
-    left:50%;
-    top:50%;
-    overflow:scroll;
-    text-align:justify;
-    color:#eeeeee;
+.navi2 {
+    color:#eee;
+    display:inline-block;
+    background-color:#3a3737;
+    border: dotted 1px #cccccc;
+    width:77px;   
+    padding:3px;
+    text-transform:lowercase;  
+    font-size:8px;
+	 font-family:bitter;
+	 text-align:center;
+	    }
+	    
+.navi3 {
+    background-color:transparent;    
+    border: none;
+    padding:1px;
+    text-transform:lowercase; 
     font-size:12px;
-}
-
-ul#tabs {
-   list-style-type: none;
-   padding: 0;
-   text-align: center;
-   margin-left:3px;
-}
-
-ul#tabs li {
-   display: inline-block;
-   background-color: transparent;
-   border: solid 1px #6a6a6a;
-   padding: 5px 15px;
-   margin-bottom: 4px;
-   margin-left:2px;
-   color: {color:verse muse tabs};
-   cursor: pointer;
-}
-
-ul#tabs li:hover {
-   background-color: {color:verse muse tabs hover};
-}
-
-ul#tabs li.active {
-   background-color: {color:verse muse tabs active};
-   display: inline-block;
-}
-
-ul#tab {
-   list-style-type: none;
-   margin-top: 10px;
-   padding: 0;
-}
-
-ul#tab li {
-   display: none;
-}
-
-ul#tab li.active {
-   display: block;
-}
- 
-#verse {
-   height:100px;
-	background-color: transparent;
-	padding-bottom:1px;
-	padding-top:2px;
-   margin-right:4px;
-	overflow:auto;
-   }
-
-#left img {
-   float:left;
-	margin-right:8px;
-	margin-left:1px;
-	width:50px;
-	height:75px;
-	border:1px dashed #a8a8a8;
-   }
+	 font-family:bitter;
+	 text-align:center;
+   }	
    
-#right img {
-  float:right;
-  margin-right:1px;
-  margin-left:8px;
-  width:50px;
-  height:75px;
-  border:1px dashed #a8a8a8;
-   }
-   
- /* tabbed muse/verse tab */
- 
- /* tabbed page code */
-
-#headernav {
-    left:50%;
-    top:50%;
-    overflow:scroll;
-    text-align:justify;
-    color:#eeeeee;
+.navi4 {
+    color:#bbbbc3;
+    display:inline-block;
+    background-color:transparent;
+    border: solid 1px #63646a;
+    width:175px;   
+    padding:3px;
+    text-transform:lowercase;  
     font-size:12px;
-}
+	 font-family:bitter;
+	 text-align:center;
+	    }       
+	    
+div.naviheader {
+ 	 margin-left:60px;
+ 	 }
+ 	 
+div.navihead {
+ 	 margin-left:60px;
+ 	 }
+	   
+div.shipimg {
+ 	 margin-left:90px;
+ 	 }	    
+ 	 
+div.shipimgm {
+ 	 margin-left:85px;
+ 	 }	 
+ 	 
+div.shipimgm img {
+ 	 border:1px solid #a8a8a8;
+ 	 }	 
+ 	 
+div.shipimge {
+ 	 margin-left:140px;
+ 	 }	    
 
-ul#mvtabs {
-   list-style-type: none;
-   padding: 0;
-   text-align: center;
-   margin-left:3px;
-}
+   
+/* end of nav page styling */
 
-ul#mvtabs li {
-   display: inline-block;
-   background-color: transparent;
-   border: solid 1px #6a6a6a;
-   padding: 5px 15px;
-   margin-bottom: 4px;
-   margin-left:2px;
-   color: {color:verse muse tabs};
-   cursor: pointer;
-}
+/* verse information coding */
 
-ul#mvtabs li:hover {
-   background-color: {color:verse muse tabs hover};
-}
-
-ul#mvtabs li.active {
-   background-color: {color:verse muse tabs active};
-   display: inline-block;
-}
-
-ul#mvtab {
-   list-style-type: none;
-   margin-top: 10px;
-   padding: 0;
-}
-
-ul#mvtab li {
-   display: none;
-}
-
-ul#mvtab li.active {
-   display: block;
-}
- 
-#verse {
-   height:100px;
+#verlinks {
 	background-color: transparent;
-	padding-bottom:1px;
-	padding-top:2px;
-   margin-right:4px;
-	overflow:auto;
-   }
-
-#left img {
-   float:left;
-	margin-right:8px;
-	margin-left:1px;
-	width:50px;
-	height:75px;
-	border:1px dashed #a8a8a8;
+	line-height:23%;
+	margin-left:10px;
+	font-size:10px;
    }
    
-#right img {
-  float:right;
-  margin-right:1px;
-  margin-left:8px;
-  width:50px;
-  height:75px;
-  border:1px dashed #a8a8a8;
-   }
-   
-   
-/* navigation tab in popup */
+#verlinks a {
+	font-size:12px;
+	font-family:cambria;
+}
 
-.button {
-  display:inline-block;
-  text-align:center;
-  width:90px;
-  margin:4px;
-  padding:2px;
-  background-color:{color:buttons background};
-  color:{color:buttons};
-  border-top: 1px solid #ddd;
-  border-bottom: 1px dashed #ddd;
-  border-radius:2px;
-	}
+/* muse information coding ends */
 
-.button:hover {
-  border-top: 1px dashed #ddd;
-  border-bottom: 1px solid #ddd;
-	}
-	
-
-/* tab links coding */
-
-   /* Clearfix */
-    .tab-links:after {
-        display:block;
-        clear:both;
-        content:'';
-        
-                
-    }
-    
  
-    .tab-links li {
-        margin-left:1px;
-        padding:0px;
-        display:inline-block;
-        list-style:none;
-        text-transform:uppercase;
-    }
- 
-        .tab-links a {
-            display:inline-block;
-				color:{color:links};
-				padding-left:10px;
-				-webkit-transition: all 0.7s ease;
-				-moz-transition: all 0.7s ease;
-				-o-transition: all 0.7s ease;
-        }
-        
-      .tab-links a:hover {
-      	color:{color:links hover};
-			letter-spacing:1px;
-      }
-
-/* end of tab links coding */
-
-/* tab content -- best not to touch this either */
-
-  .tab-content {
-    }
- 
-        .tab {
-            display:none;
-        }
- 
-        .tab.active {
-            display:block;
-        }
-
-/* end of tab content coding */	
-
-
 /* this is the credit coding. DO NOT REMOVE */
     
    #credit {
@@ -1146,8 +1542,7 @@ ul#mvtab li.active {
 /* credit coding ends here */
 
 
-/* Making IE6 Understand Fixed Positioning */
-
+ /* Making IE6 Understand Fixed Positioning */
 *html #fade {
  position: absolute;
 }
@@ -1156,48 +1551,80 @@ ul#mvtab li.active {
 }
     {CustomCSS}
     
-  
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+   
 pre {
    white-space: pre-wrap;      
    white-space: -moz-pre-wrap;
    white-space: -pre-wrap;    
    white-space: -o-pre-wrap;  
    word-wrap: break-word;
-   }   
-
-</style></head>
+   }    
+ 
+.toggle a.toggle-trigger {
+    display:inline-block;
+    letter-spacing:2px;
+    text-align:center;
+    padding: 2px;
+    position:relative;
+    text-decoration: none;
+    color:#fff; /*change your faq question color here */}
+ 
+.toggle a.toggle-trigger:hover {
+    text-decoration: none;}
+ 
+.toggle a.active {
+    text-decoration: none;
+    color:#fff;
+ 
+.toggle .toggle-content {
+    background-color:transparent;
+    text-align:left;
+    padding: 10px 20px 10px 20px;
+    color:#ffffff; /*change your answer text color here */}    
+   
     
-<body>
+ 
+    </style></head><body>
+    
+<!-- this is the meat of the theme and makes it what it is -->
 
-<div id="sidebar"> 
+<div id="sidebar">
+<img src="{image:sidebar}">
+</div>
 
-<div id="name">{text:name}</div>
 
-<div id="sidebox">{text:sidebox}</div>
+<div id="quotes">
+{text:quote box}
+</div>
 
-<div id="sideimage"><img src="{image:sideimg}"></div>
+<div id="sidebar3">
+{text:character name}
+</div>
 
 <div id="links">
 <div class="tabs">
 <ul class="tab-links">
-<li class="active"><a href="/" title="refresh"><span class="fas fa-cogs" style="font-size:110%"></span></a></li>
+<li class="active">
+<a href="/" title="refresh"><span class="lnr lnr-location" style="font-size:85%"></span></a></li>
 <li><a href="#tab2" title="questions?">01.</a></li>
 <li><a href="#tab3" title="navigation">02.</a></li>
+<li><a href="#tab4" title="muses">03.</a></li>
+</ul>
+</div>
 </div>
 
-</div> 
-
-<div id="pagination">
-{block:Pagination} 
-{block:PreviousPage}<a href="{PreviousPage}"><span class="fas fa-arrow-left" style="font-size:100%"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a href="{NextPage}"><span class="fas fa-arrow-right" style="font-size:100%"></b></span></a>
-{/block:NextPage}
-{/block:Pagination}
+<div id="hoverbox">
+{block:IfShowhoverbox}
+<div id="hovercontent">
+{text:hover box}
 </div>
-
-</div> 
-
-
-<div id="container">
+{/block:IfShowhoverbox}
+</div>
 
 <!-- tabs -->
 <div class="tabs">
@@ -1205,39 +1632,32 @@ pre {
 <!--  TAB 1  -->
 <div id="tab1" class="tab active">
 <div class="tab-content">
-
-{block:Posts}
+<div id="entries">
+{block:Posts} 
 {block:NoRebloggedFrom}
 {block:RebloggedFrom}
 {ReblogParentName}
 {/block:RebloggedFrom}
 {/block:NoRebloggedFrom}
 
-<div class="postswrap">
-<div class="posts"> 
-
+{block:ContentSource}<!-- {SourceURL}
+{block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+<div id="post">
+ 
 {block:Text}<h1>{block:Title}{Title}{/block:Title}</h1>{Body}{/block:Text}
-
-{block:Photo}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{block:Caption}{Caption}{/block:Caption}{/block:Photo}
-
-{block:Panorama}{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Panorama}
-
-{block:Photoset}{Photoset-500}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
-
-{block:Quote}<div class="quote">{Quote}</div>{block:Source}<div class="quotesource">&mdash; {Source}</div>{/block:Source}{/block:Quote}
-
-{block:Link}<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}
-
-{block:Chat}
-          {block:Title}
-            <h1>{Title}</h1>{/block:Title}<br>
-<ul class="convo">{block:Lines}<li class="line_{Alt} user_{UserNumber}">{block:Label}<span class="label"><strong>{Label}</strong></span>{/block:Label}
-{Line}</li>{/block:Lines}</ul>
-            {/block:Chat}
-            
-                                    
-{block:Video}{Video-500}{block:Caption}{Caption}{/block:Caption}{/block:Video}
-
+ 
+{block:Photo}{LinkOpenTag}<div align="center"><img src="{PhotoURL-500}"></div>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+ 
+{block:Photoset}{Photoset}{block:Caption}{Caption}{/block:Caption}<br />{/block:Photoset}
+ 
+ {block:Quote}<big><big>"{Quote}"</big></big>{/block:Quote}
+ 
+{block:Link}<h1><a href="{URL}" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}{hw}
+ 
+{block:Chat}{block:Title}<h1>{Title}</h1>{/block:Title}{block:Lines}{block:Label}<b>{Label}</b>{/block:Label} {Line}<br>{/block:Lines}{/block:Chat}{hw}
+ 
 <!--AUDIO POST-->
 {block:Audio}
 {block:AudioPlayer}
@@ -1260,52 +1680,71 @@ pre {
 <br /><br />
 {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
 {/block:Audio}
+ 
+{block:Video}{Video-400}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+ 
+{block:Answer}<div id="ask">{Question} <img class="ask" src="{AskerPortraitURL-48}"><br />&mdash;&nbsp;<i>{Asker}</i><br /><br /></div><div id="ans"><div id="wrapping">{Answer}</div><div style="clear:both"></div></div>{/block:answer}
+{block:IndexPage}
+ 
+<div class="toggle"> 
+<div id="info"> 
+{block:Date}
+<a href="{Permalink}" title="posted {TimeAgo} - {ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{ShortYear}"><span class="lnr lnr-cross" style="font-size:125%"></span></a>{/block:Date}
+<a href="{Permalink}" title="{NoteCountWithLabel}"><span class="lnr lnr-heart" style="font-size:125%"></span></a>
 
-{block:Answer}
-<div class="asker">{Asker} left a message</div>
-<div class="question">{Question}</div>
-{Answer}
-{/block:Answer}
+{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="lnr lnr-cross" style="font-size:125%"></span></a> {/block:RebloggedFrom}{block:ContentSource} 
+<a title="source: {SourceTitle}" href="{SourceURL}"><span class="lnr lnr-cross" style="font-size:125%"></span></a>{/block:ContentSource}   {/block:RebloggedFrom} <a href="#" class="toggle-trigger" title="click for tags"><span class="lnr lnr-cross" style="font-size:125%"></span></a> <a href="{ReblogURL}"target="_blank" title="reblog this post"><span class="lnr lnr-redo"></span></a> 
 
-<div class="permalinks"> 
-<div class="date"><span class="fas fa-bookmark" style="font-size:75%"></span> &nbsp; <a href="{PERMALINK}" title="{ShortDayOfWeek} {ShortMonth}.{MonthNumberWithZero}.{Year}">{ShortDayOfWeek} {ShortMonth}.{MonthNumberWithZero}.{Year} </a> &nbsp;|&nbsp; <a href="{PERMALINK}" title="{NoteCountWithLabel}"><span style="color:red; font-size:105%">&#10084;</span>&nbsp;{NoteCount}</a></div>
-<div class="reblogs">{block:RebloggedFrom}
-<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="fas fa-share-alt"></span></a> &nbsp;{/block:RebloggedFrom}{block:ContentSource} <a title="source: {SourceTitle}" href="{SourceURL}"><span class="fas fa-cog"></span></a>{/block:ContentSource} &nbsp;<a href="{ReblogURL}" title="reblog this post"><span class="fas fa-redo"></span></a>
 </div>
-{block:HomePage}{block:PinnedPostLabel}<div class="pinned"><a href="{Permalink}"><span class="fas fa-thumbtack"></span>{PinnedPostLabel}</a></div>{/block:PinnedPostLabel}{/block:HomePage}
-</div>
+
+<div class="toggle-content">
+<div class="tags">
+{block:HasTags}
+{block:Tags}
+<a title="{Tag}" href="{TagURL}">{Tag}</a>
+&nbsp;&nbsp;
+{/block:Tags}
+{/block:HasTags}
+</div></div></div>
+{/block:IndexPage}
+
 
 {block:PermalinkPage}
-<div class="tags">
-<b2>filed under:</b2>&nbsp;
-{block:HasTags}{block:Tags}&nbsp;<a title="{Tag}" href="{TAGURL}">{TAG}</a>&nbsp; &nbsp; {/block:Tags}{/block:HasTags}
+<div id="perminfo"> 
+{block:Date}
+<a href="{Permalink}" title="posted {TimeAgo} - {ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{ShortYear}"><span class="lnr lnr-cross" style="font-size:125%"></span></a>{/block:Date}
+<a href="{Permalink}" title="{NoteCountWithLabel}"><span class="lnr lnr-heart" style="font-size:125%"></span></a>
+
+{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="lnr lnr-cross" style="font-size:125%"></span></a> {/block:RebloggedFrom}{block:ContentSource} 
+<a title="source: {SourceTitle}" href="{SourceURL}"><span class="lnr lnr-cross" style="font-size:125%"></span></a>{/block:ContentSource}   {/block:RebloggedFrom}
+<a href="{ReblogURL}"target="_blank" title="reblog this post"><span class="lnr lnr-redo"></a>&nbsp; &nbsp; &nbsp;
+</div>
+
+<div class="permtags">
+{block:HasTags}
+{block:Tags}
+<a title="{Tag}" href="{TagURL}">{Tag}</a>
+&nbsp;&nbsp;
+{/block:Tags}
+{/block:HasTags}
 </div>
 {/block:PermalinkPage}
-
-</div>
 
 <div class="postnote">
 {block:PostNotes}{PostNotes-16}{/block:PostNotes}
 </div>
-
 </div>
 {/block:Posts}
-</div>
 
-{block:ContentSource}
-<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
-width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
-{/block:SourceLogo}
-{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
-{/block:ContentSource}
-</div>
-
-<!-- -------------------------- TAB 2 -------------------------- -->
-
+    </div></div>
+    
+<!-- TAB 2  -->
 <div id="tab2" class="tab">
-    <div class="tabcontent">
-       <div id="headernav">
-<h4>questions and answers</h4>
+<div class="tabcontent">
+<div id="headernav">
+<div id="heading"><h3>questions & answers</h3></div>
 <ul id="tabs">
      <li class="active">questions</li>
      &nbsp;
@@ -1314,251 +1753,448 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
 
 <ul id="tab">
 <li class="active">
-<iframe id="ask_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/YOURURLHERE.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+(1) <b>messages:</b> this is for the rules regarding your inbox (ie. how you handle hate, etc) <br /><br />
+(2) <b>memes:</b> this is for the rules regarding how you handle memes (mutuals only, etc.) <br /><br />
+(3) <b>plotting:</b> this is for the rules regarding how plotting goes on your blog and what should be sent in terms of asks
+<br /><br />
+<iframe id="ask_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/YOURURLHERE.tumblr.com" frameborder="0" scrolling="no" width="450" height="300"></iframe>
 </li>
 
 <li>
-<iframe id="submit_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/submit_form/YOURURLHERE.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+<iframe id="submit_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/submit_form/YOURURLHERE.tumblr.com" frameborder="0" scrolling="no" width="450" height="300"></iframe>
 </li>
+<br />
+<br />
+<br />
+<br />    
     </div>
     </div>
-</div>
-        
-        
-<!-- -------------------------- TAB 3 -------------------------- -->
-
+    </div>
+    
+<!-- TAB 3 -->
 <div id="tab3" class="tab">
-    <div class="tabcontent">
-    <div id="headernav">
-        <h4>site map</h4>
-        <ul id="tabs">
-     <li class="active" style="width:75px">guidelines</li>
-		&nbsp;
-     <li style="width:75px">biography</li>
+<div class="tabcontent">
+ <div id="headernav">
+ <h3>navigation</h3>
+<ul id="tabs">
+     <li class="active">guidelines</li>
      &nbsp;
-     <li style="width:75px">verses/muses</li>
+     <li>connections</li>
      &nbsp;
-     <li style="width:75px">navigation</li>
+     <li>site map</li>
 </ul>  
 
 <ul id="tab">
 <li class="active">
-<h4>guidelines</h4>
-<p><center><h3>section one&nbsp;&nbsp;</h3></center>
-
+<div id="header2">guidelines</div>
+<div id="header3">section one</div>
 <p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
-<p>
-<br />
-<p><center><h3>section two&nbsp;&nbsp;</h3></center>
-
+<br /><br />
+<div id="header3">section two</div>
 <p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
-<p>
-<br />
-<p><center><h3>section three&nbsp;&nbsp;</h3></center>
-
+<br /><br />
+<div id="header3">section three</div>
 <p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
-<p>
-<br />
-<p><center><h3>section four&nbsp;&nbsp;</h3></center>
-
+<br /><br />
+<div id="header3">section four</div>
 <p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
-
-<p>
-<br />
-<p><center><h3>section five&nbsp;&nbsp;</h3></center>
-
+<br /><br />
+<div id="header3">section five</div>
 <p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
-
+<br /><br />
+<div id="header3">section six</div>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<br /><br />
+<div id="header3">section seven</div>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<br /><br />
 </li>
 
 <li>
-<h4>biography</h4>
-<p><center><h3>section six&nbsp;&nbsp;</h3></center>
+<div id="header2">mains &amp; exclusives</div>
 
-<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
-<p>
+<div id="header3">exclusives</div>
+<div class="shipimgm">
+<p><a title="exclusive one"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="exclusive two"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="exclusive three"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="exclusive four"><img src="https://i.imgur.com/PA62SgO.png"></a>
+</div>
 <br />
 
-<p><center><h3>section seven&nbsp;&nbsp;</h3></center>
-
-<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
-<p>
+<div id="header3">mains</div>
+<div class="shipimgm">
+<p><a title="main one"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="main two"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="main three"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="main four"><img src="https://i.imgur.com/PA62SgO.png"></a>
+</div>
 <br />
 
-<p><center><h3>section eight&nbsp;&nbsp;</h3></center>
-
-<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
-<p>
+<div id="header3">other connections</div>
+<div class="shipimgm">
+<p><a title="ship one"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="ship two"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="ship three"><img src="https://i.imgur.com/PA62SgO.png"></a>&nbsp;&nbsp;
+<a title="ship four"><img src="https://i.imgur.com/PA62SgO.png"></a>
+</div>
 <br />
-
-<p><center><h3>section nine&nbsp;&nbsp;</h3></center>
-
-<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
-<p>
-<br />
-
-<p><center><h3>section ten&nbsp;&nbsp;</h3></center>
-
-<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
-<p>
-<br />
-
 </li>
 
 <li>
-<h4>verses/muses</h4>
-<p>
-<ul id="mvtabs">
-    <li style="width:85px">candon</li>&nbsp; 
-    <li style="width:85px">fandom</li>&nbsp; 
-    <li style="width:85px">from the screen</li>&nbsp;
-    <li style="width:85px">from the page</li>&nbsp; 
-    </ul>
+<div id="header2">site map</div>
+
+<div class="navihead">
+<p><a href="#one" class="navi4" style="font-size:12px">one</a> <a href="#two" class="navi4" style="font-size:12px">two</a> 
+<p><a href="#three" class="navi4" style="font-size:12px">three</a> <a href="#four" class="navi4" style="font-size:12px">four</a>
+<p><a href="#five" class="navi4" style="font-size:12px">five</a>  <a href="#six" class="navi4" style="font-size:12px">six</a>
+</div>
 <br />
 
-<ul id="mvtab">
-<li class="active">
-<center><h3>verse one</h3></center>
-<p>
-<div id="verse">
-<div id="left"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>verse one</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-<p>
-<center><h3>verse two</h3></center>
-<p>
-<div id="verse">
-<div id="right"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>verse two</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-
-
-</li>
-
-<li>
-<center><h3>verse three</h3></center>
-<p>
-<div id="verse">
-<div id="left"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>verse three</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-<p>
-<center><h3>verse four</h3></center>
-<p>
-<div id="verse">
-<div id="right"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>verse four</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-
-</li>
-
-<li>
-<center><h3>muse one</h3></center>
-<p>
-<div id="verse">
-<div id="left"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>muse one</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-<p>
-<center><h3>muse two</h3></center>
-<p>
-<div id="verse">
-<div id="right"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>muse two</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-
-</li>
-
-<li>
-<center><h3>muse three</h3></center>
-<p>
-<div id="verse">
-<div id="left"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>muse three</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-<p>
-<center><h3>muse four</h3></center>
-<p>
-<div id="verse">
-<div id="right"><img src="https://i.imgur.com/0NhNtQ7.png"></div>
-<a href="/"><b>muse four</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
-</div>
-
-</li>
-</ul> 
-</li>
-
-<li>
-<h4>navigation</h4>
-<center><p><h3>section one</h3>
-<p>
-<a href="/" class="button">one</a> 
-&nbsp;
-<a href="/" class="button">two</a>
-&nbsp;
-<a href="/" class="button">three</a>
+<a name="one"><div id="header2">section one</div></a>
 <br />
-<a href="/" class="button">four</a> 
-&nbsp;
-<a href="/" class="button">five</a>
-&nbsp;
-<a href="/" class="button">six</a>
-<p>
-<h3>section two</h3>
-<p>
-<a href="/" class="button">one</a> 
-&nbsp;
-<a href="/" class="button">two</a>
-&nbsp;
-<a href="/" class="button">three</a>
+<ul>
+&#9642; <a href="#?w=297" rel="01" class="poplight" title="example one">popup example one</a><br />
+&#9642; <a href="#?w=297" rel="02" class="poplight" title="example two">popup example two</a><br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+</ul>
 <br />
-<a href="/" class="button">four</a> 
-&nbsp;
-<a href="/" class="button">five</a>
-&nbsp;
-<a href="/" class="button">six</a>
-<p> 
-<h3>section three</h3>
-<p>
-<a href="/" class="button">one</a> 
-&nbsp;
-<a href="/" class="button">two</a>
-&nbsp;
-<a href="/" class="button">three</a>
-<br />
-<a href="/" class="button">four</a> 
-&nbsp;
-<a href="/" class="button">five</a>
-&nbsp;
-<a href="/" class="button">six</a>
-</center>
-</li>
 
-    </div></div>
-</div>   
-    
+<a name="two"><div id="header2">section two</div></a>
+<br />
+ <ul>
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
  
-<!-- END OF TABS -->
+ </ul>
+ <br />
 
-</div>
-</div>
-</div>
-</div>
-</div>
+<a name="three"><div id="header2">section three</div></a>
+<br />
+<ul>
 
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+  
+ 
+ </ul>
+ <br />
+
+<a name="four"><div id="header2">section four</div></a>
+<br />
+ <ul>
+    
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+
+</ul>
+<br />
+
+
+<a name="five"><div id="header2">section five</div></a>
+<br />
+ <ul>
+ 
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+   
+ </ul>
+ <br />
+
+<a name="six"><div id="header2">section six</div></a>
+<br />
+ <ul>
+
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+&#9642; information here<br />
+ 
+ </ul>
+ 
+ </li>
+
+   </div> </div></div>
+   
+<!-- TAB 4 -->
+<div id="tab4" class="tab">
+<div class="tabcontent">
+ <div id="headernav">
+ <h3>faces to the words</h3>
+<ul id="tabs">
+     <li class="active"style="width:200px">from my mind</li>&nbsp;
+     <li style="width:200px">from the page</li>
+     <li style="width:200px">from the screen</li>&nbsp;
+     <li style="width:200px">from the console</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+<div id="header2">original characters</div>
+
+<div id="header3">muse one</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | gallery | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse two</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse three</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+</li>
+
+<li>
+<div id="header2">from the page</div>
+
+<div id="header3">muse one</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | gallery | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse two</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse three</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+</li>
+
+<li>
+<div id="header2">from the screen</div>
+
+<div id="header3">muse one</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | gallery | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse two</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse three</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+ 
+ </li>
+ 
+ <li>
+<div id="header2">from the console</div>
+
+<div id="header3">muse one</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | gallery | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse two</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+
+<div id="header3">muse three</div><br />
+<div id="wrapverse"><img src="https://i.imgur.com/PA62SgO.png">
+<b>muse:</b> muse name<br />
+<b>fandom:</b> fandom<br />
+<b>faceclaim:</b> faceclaim<br />
+<b>muse information:</b> muse information here<br />
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</div>   
+<div class="hr2"><hr /></div>
+<div id="verlinks">
+<p>interactions | headcanons | study
+</div>
+<div class="hr2"><hr /></div>
+<p>
+<br />
+ 
+ </li>
+
+   </div> </div></div>   
+        
+<!-- end of tabs -->
+</div> </div>
+   
+<div style="float:left;"><p></p><br><br><div id="pagination">{block:Pagination}{block:PreviousPage}<a href="{PreviousPage}"><span class="lnr lnr-arrow-left"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a href="{NextPage}"><span class="lnr lnr-arrow-right"></b></span></a>{/block:NextPage}{/block:Pagination} </div></div></div>
 
 <div id="credit"> 
 <a href="https://houseofsol.tumblr.com" title="theme by houseofsol"><img src="https://68.media.tumblr.com/e5f4ca3f38bdf7a73c37efc9b8fd4996/tumblr_inline_oj2mweKepP1scj6vj_500.png"></a>
 </div>
-
 
 <!-- tabs/all in one script. do not delete -->
  
@@ -1606,12 +2242,97 @@ $(document).ready(function() {
 
 <!-- end all in one script coding -->
 
+<!-- Statcounter code -->
 
+<!-- End of Statcounter Code -->
+ 
 </body>
 
+ <!-- popups -->
+
+<!-- this is a non-tabbed popup. to use it you'll need to add the link code to wherever you want to use it and make certain the div ids match -->
+<div id="01" class="popup_block">
+<div id="headerp">section one</div>
+<ul><li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+</ul>
+<br />
+
+<div id="headerp">section two</div>
+<div id="header2p">subsection one</div>
+<ul><li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+</ul>
+<br />
 
 
+<div id="header2p">subsection two</div>
+<ul><li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+</ul>
+<br />
 
+
+<div id="header2p">subsection three</div>
+<ul><li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+<li>information here
+</ul>
+
+</div>
+
+<!-- this is a tabbed popup. to use it you'll need to add the link code to wherever you want to use it and make certain the div ids match -->
+
+<div id="02" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:110px">section one</li>&nbsp;
+	  <li style="width:110px">section two</li>
+     <li style="width:110px">section three</li>&nbsp;
+     <li style="width:110px">section four</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<center><div id="header3p">section one&nbsp;&nbsp;</div></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+</li>
+
+<li>
+
+<center><div id="header3p">section two&nbsp;&nbsp;</div></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+</li>
+
+<li>
+<center><div id="header3p">section three</div></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<center><div id="header3p">section four</div></center>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
     
+</div>
+
+
 </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+
 </html>
