@@ -155,6 +155,7 @@ attribute:"title"
 <meta name="color:tooltipstext" content="#ffffff">
 <meta name="color:popup background" content="#0f0f0f"/>
 <meta name="color:popup text" content="#cccccc"/>
+<meta name="color:popup menu hover" content="#a6120c"/>
 <meta name="color:buttons" content="#cccccc"/>
 <meta name="color:buttons background" content="#1a1a1a"/>
 
@@ -207,6 +208,7 @@ ul#poptabs li {
 
 ul#poptabs li:hover {
    background-color: transparent;
+   color: {color:popup menu hover};
 }
 
 ul#poptabs li.active {
